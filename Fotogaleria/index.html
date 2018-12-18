@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Fotogallery</title>
+</head>
+
+<body>
+
+     <section id="how" class="how">
+            <h1>How it works?</h1>
+            <div class="how_grid ">
+                <div class="left_arrow">
+                    <a class="prev" onclick="plusSlides(-1)"><img src="images/left_arrow.png" alt="left"></a></div>
+                <div class="mySlides"><img src="images/step1.png" alt=""></div>
+                <div class="mySlides"><img src="images/step2.png" alt=""></div>
+                <div class="mySlides"><img src="images/step3.png" alt=""></div>
+                <div class="mySlides"><img src="images/step4.png" alt=""></div>
+                <div class="mySlides"><img src="images/step5.png" alt=""></div>
+                <div class="right_arrow">
+                    <a class="next" onclick="plusSlides(1)"><img src="images/right_arrow.png" alt="right"></a></div>
+            </div>
+            <div class=smallImagesBox>
+                <div class="smallSlides"><img src="images/sm-step1.png" alt=""></div>
+                <div class="smallSlides"><img src="images/sm-step2.png" alt=""></div>
+                <div class="smallSlides"><img src="images/sm-step3.png" alt=""></div>
+                <div class="smallSlides"><img src="images/sm-step4.png" alt=""></div>
+                <div class="smallSlides"><img src="images/sm-step5.png" alt=""></div>
+            </div>
+        </section>
+
+</body>
+     <script>
+        var slideIndex = 1;
+
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides"); //array
+            var smallSlides = document.getElementsByClassName("smallSlides");
+
+            //.length to ilość elementów w arrayu. Jeśli n większe niż ilość slajdów w arrayu to pokazuje pierwszy slajd
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            //Jeśli n mniejsze od 1 to pokazuje ostatni slajd
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
+            //każdy slajd "display none"
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                smallSlides[i].classList.remove("smallSlideUnderlined");
+            }
+            //-1, żeby pokazać pierwszy slajd, bo w arrayu start od 0, a var zdef jako 1
+            slides[slideIndex - 1].style.display = "block";
+            smallSlides[slideIndex -1].classList.add("smallSlideUnderlined");
+        }
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        showSlides(slideIndex); //wywołanie funkcji
+
+    </script>
+</html>
+
+
+
+
+
+
+
+

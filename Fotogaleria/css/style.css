@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
+* {
+    font-family: "Open Sans";
+    font-size: 20px
+}
+
+.smallSlides{
+    display: inline-block;
+    /*Mozna zrobić ramkę na wybranym obrazku, albo obrazki z listy na mniejszym opacity, a wybrany na opacity 100%*/
+}
+
+.smallSlideUnderlined{
+    display: inline-block;
+    padding:1px;
+    border:1px solid #000000;
+}
+
+.smallImagesBox{
+margin-left: 20%;
+}
+
+main {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+/*header*/
+
+.apply{
+    border: 1px solid
+}
+
+header img {
+    max-width: 100%;
+    display: block;
+    margin-left: 0px
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "area1 area3" "area2 area2";
+    text-align: right;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
+
+}
+
+.logo {
+    grid-area: area1
+}
+
+.nav {
+    grid-area: area2
+}
+
+.nav-icon3 {
+    grid-area: area3;
+}
+
+nav {
+    color: #e5004c;
+}
+
+.apply{
+    background-color: #e5004c;
+    color: white;
+    padding: 10px;
+}
+nav img {
+    width: 140px;
+}
+nav a {
+    text-decoration: none;
+    color: #e5004c;
+    display: block;
+    text-align: center;
+    line-height: 50px
+}
+
+nav a span {
+    display: none;
+}
+
+nav {
+    display: none
+}
+
+h1 {
+    font-family: "Lobster";
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+/*About*/
+
+.about h1 {
+    color: #e5004c;
+}
+
+.about p {
+    color: #005b82;
+}
+
+.about img{
+    width: 40%
+}
+
+/*why should I go*/
+
+.why h1 {
+    color: #22afe6;
+}
+
+.why h2,
+.why p {
+    color: #005b82;
+}
+
+/*chat with us*/
+
+.chat div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%
+}
+.chat p {
+    color: #f39200
+}
+
+.chat h2 {
+    font-family: "Lobster"
+}
+
+.chat h1 {
+    color: #f39200
+}
+
+.chat .wrapper p {
+    text-align: left
+}
+
+.blue,
+.blue p {
+    color: #22afe6
+}
+
+.mangenta,
+.mangenta p {
+    color: #e5004c
+}
+
+.purple,
+.purple p {
+    color: #692f74
+}
+
+.chat .button img{
+    width: 50%
+}
+
+/*how it works*/
+
+.how h1 {
+    color: #692f74;
+}
+
+.how_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "area2 area2" "area1 area3";
+    justify-items: center;
+}
+
+.left_arrow {
+    grid-area: area1;
+}
+
+.mySlides {
+    grid-area: area2
+}
+
+.right_arrow {
+    grid-area: area3
+}
+
+.how_grid a img {
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+
+}
+
+/*destinations*/
+
+.where h1 {
+    color: #bbd031
+}
+
+footer {
+    height: 50px;
+    background-color: #23b7bc;
+    margin-top: 50px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-items:center;
+    justify-content:space-around
+
+}
+
+footer img{
+    width: 40px;
+    height: auto;
+/*    margin-right: 20px;*/
+}
+
+
+
+
+
+@media screen and (min-width: 990px) {
+
+    nav {
+        display: block;
+    }
+    nav a {
+        display: inline;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    nav a span{
+        display: inline
+    }
+
+
+    #nav-icon3 {
+        display: none;
+    }
+
+    header {
+
+        display: flex;
+        justify-content: space-between
+    }
+
+    header img {
+        max-width: 80%
+    }
+
+}
+
+@media screen and (min-width: 700px)  {
+
+    header{
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    background-color: white;
+    }
+
+    main{
+    z-index: 0;
+    }
+
+    section{
+        padding-top: 30px;
+        padding-bottom: 120px;
+    }
+
+    .about{
+        padding-bottom: 200px;
+    }
+
+    .about img{
+        width: auto;
+    }
+
+    h1{
+        font-size: 3em;
+        padding-top: 50px;
+        margin-bottom: 80px
+    }
+
+    .button img{
+        max-width: 200px;
+        display: block;
+        margin-right: 0px;
+        margin-left: auto
+    }
+
+    header{
+        width: 80%;
+    }
+
+    main{
+        width: 80%
+    }
+    .wrapper div {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .why img {
+        width: 100%;
+    }
+
+    .why .wrapper div {
+        width: 50%;
+    }
+
+    .how_grid a img {
+        max-width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .how_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "area1 area2 area3";
+        align-items: center;
+    }
+footer {
+    justify-content:flex-end
+
+}
+
+footer img{
+
+    margin-right: 20px;
+}
+
+}

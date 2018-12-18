@@ -1,3 +1,812 @@
-body{
- font-size: 1em;
+/*colors:
+font - #808080
+border hover - #872936
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+
+.active {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+body {
+    font-family: "open sans";
+    font-weight: 300;
+    color: #808080;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #808080;
+    font-family: "Raleway";
+    font-weight: 400;
+    margin: 90px 0vw 10px;
+    ;
+}
+
+
+
+main p {
+    font-size: 14px;
+    color: #808080;
+    text-align: center;
+}
+
+/*-------------header---------------------*/
+
+.SoMeLinks {
+    display: none;
+}
+
+header img {
+    max-width: 150px;
+    display: block;
+    margin-top: 4vh;
+    margin-right: 0vw;
+    margin-left: auto;
+}
+
+header {
+    width: 80vw;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "area1 area2" "area3 area3"
+}
+
+header h1 {
+    grid-area: area1;
+}
+
+header .burgerIcon {
+    grid-area: area2;
+
+}
+
+header .navigation {
+    grid-area: area3;
+}
+
+/*-------------mobile menu--------------*/
+
+.navigation {
+    display: none;
+}
+
+.navigation a:link,
+.navigation a:visited,
+.navigation a:hover,
+.navigation a:active {
+    text-decoration: none;
+    color: #808080;
+}
+
+
+.navigation h2 {
+    display: inline;
+    margin-right: 20px;
+    letter-spacing: 3px;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.sub_menu_1 a,
+.sub_menu_2 a {
+    font-size: 25px;
+    display: block;
+    margin: 30px 30px;
+
+}
+
+/*--------------footer--------------------*/
+
+footer img {
+    max-width: 200px;
+    display: inline;
+    padding: 30px 40px;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    left: 0;
+    z-index: 4;
+    bottom: 0;
+    width: 100%;
+    color: white;
+
+
+}
+
+/*------------animation----------------------*/
+
+.animation {
+    position: relative;
+    height: 1400px;
+    width: 100vw;
+    top: 5vh;
+}
+
+.signature img {
+    margin: 90px 20px 20px auto;
+    width: 70vw;
+    display: block;
+}
+
+img {
+    display: block;
+}
+
+.box1 {
+    position: absolute;
+    z-index: 2;
+    width: 45vw;
+    animation-name: move;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    margin-left: 5vw;
+}
+
+@keyframes move {
+    from {
+        margin-left: 5vw;
+    }
+    to {
+        margin-left: 50vw;
+    }
+}
+
+.box2 {
+    position: absolute;
+    z-index: 1;
+    width: 45vw;
+    margin-left: 50vw;
+    animation-name: move2;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes move2 {
+    from {
+        margin-left: 50vw;
+    }
+    to {
+        margin-left: 5vw;
+    }
+}
+
+.box3 {
+    position: absolute;
+    z-index: 3;
+    width: 45vw;
+    margin-left: 5vw;
+    animation-name: opacity;
+    animation-delay: 4s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/*----------content subpage painting-----------*/
+
+.mainPaintings {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "area2" "area1";
+    width: 80vw;
+    margin: 40px auto
+}
+
+.paintings {
+    grid-area: area1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 30px;
+}
+
+.textPaintingAnimals,
+.textPaintingPortraits {
+    grid-area: area2;
+    margin: 50px 0px;
+    text-align: center;
+}
+
+
+.painting img {
+    width: 100%;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.painting h3 {
+    margin: 10px auto 0px;
+    font-weight: 300;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.infoPainting {
+    display: flex;
+    font-size: 25px;
+}
+
+.infoPainting div {
+    margin-right: 8px
+}
+
+.boxUp {
+    text-align: center;
+        color: #616161;
+        left: 0vh;
+        bottom: 0vh;
+        background-color: rgb(255, 255, 255, 0.7);
+        width: 100vw;;
+        height: 100vh;
+        z-index: 5;
+        display: none;
+        position: fixed;
+        -webkit-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+        -moz-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+        box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+
+
+
+}
+
+.boxUp img {
+        width: auto;
+        height: 1000px;
+        display: block;
+        margin: 500px auto;
+}
+
+.back {
+    margin-right: 5vw;
+    font-size: 40px;
+    text-align: right;
+}
+
+
+
+    .paintingDetail h3 {
+        width: 100%;
+        margin: 10px auto 0px;
+        font-weight: 300;
+        font-size: 25px;
+        text-transform: uppercase;
+        text-align: left;
+    }
+.boxUp .infoPainting {
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    margin: 0px auto;
+}
+
+
+
+/*----------content subpage photos-----------*/
+
+.mainPhotos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "area2" "area1";
+    width: 80vw;
+    margin: 40px auto
+}
+
+.photos {
+    grid-area: area1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 30px;
+}
+
+.textPhotos {
+    grid-area: area2
+}
+
+
+.photo img {
+    width: 100%;
+    margin: 0px;
+}
+
+.photo h3 {
+    margin: 10px auto 0px;
+    font-weight: 300;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.boxUp a:link,
+.boxUp a:visited,
+.boxUp a:hover,
+.boxUp a:active {
+    text-decoration: none;
+    color: #808080;
+}
+
+
+
+/*----------content subpage about-----------*/
+
+.aboutContent img {
+    display: block;
+    width: 50vw;
+    margin: 80px auto;
+}
+.aboutContent{
+    width: 80vw;
+    margin: 10px auto 100px auto;;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "area1" "area2"
+}
+
+.photoAbout{
+    grid-area: area1;
+}
+
+.textAbout{
+    grid-area: area2;
+}
+
+.line{
+       border-bottom: 2px solid black;
+       width: 30%;
+       margin: 50px auto;
+    }
+
+video{
+    width: 90%;
+    height: auto;
+    margin: 30px auto 30px 30px;
+}
+
+
+
+
+/*--------------------------------------desktop------------------------------------------------------*/
+
+@media all and (min-width:991px) {
+
+
+    body {
+        height: 100vh;
+    }
+
+/*----------header-----------------*/
+    header img {
+        max-width: 150px;
+        display: block;
+        margin-top: 4vh;
+        margin-right: 5vw;
+        margin-left: auto;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-areas: "area1 area2" "area3 area3";
+        margin: 0 auto;
+        width: 80vw
+    }
+
+    header h1 {
+        grid-area: area1;
+        margin: 20px 0vw 0px;
+        font-size: 25px
+    }
+
+    header .burgerIcon {
+        grid-area: area2;
+
+    }
+
+    .SoMeLinks {
+        grid-area: area2;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .SoMeLinks img {
+        height: 20px;
+        margin: 20px 0px 0px 40px;
+
+
+        max-width: none;
+    }
+
+    header .navigation {
+        grid-area: area3;
+        display: inline;
+        margin-left: 0vw;
+        margin-top: 30px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+
+    }
+
+
+
+    /*-------------dropdown menu--------------*/
+    .navigation a:link,
+    .navigation a:visited,
+    .navigation a:hover,
+    .navigation a:active {
+        text-decoration: none;
+        color: #808080;
+    }
+
+    .sub_menu_1,
+    .sub_menu_2 {
+        z-index: 2;
+        position: absolute;
+        display: none;
+        background-color: white;
+        border: 1px solid black;
+        width: 160px
+    }
+
+    .sub_menu_1 a,
+    .sub_menu_2 a {
+        display: block;
+        margin: 10px 10px 10px 5px;
+        font-size: 14px;
+
+    }
+
+    .sub_menu_1 {
+        width: 100px
+    }
+
+    .navigation .menu0,
+    .navigation .menu1,
+    .navigation .menu2,
+    .navigation .menu3,
+    .navigation .menu4,
+    .navigation .menu5,
+    .navigation .menu6 {
+        display: inline;
+        position: relative;
+
+    }
+
+    .navigation h2:hover {
+        border-bottom: 2px solid #872936;
+
+    }
+    .navigation h2 {
+        display: inline;
+        margin-right: 20px;
+        letter-spacing: 3px;
+        font-weight: 300;
+        font-size: 14px;
+    }
+
+    .sub_menu_1 a:hover {
+        color: #872936;
+        font-weight: 500;
+
+
+    }
+    .sub_menu_2 a:hover {
+        color: #872936;
+        font-weight: 500;
+
+
+    }
+
+    .menu1:hover .sub_menu_1 {
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        display: block;
+        left: 1%;
+
+    }
+    .menu2:hover .sub_menu_2 {
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        display: block;
+        left: 1%;
+    }
+
+
+
+
+    .burgerIcon {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+
+
+
+    /*--------------animation---------------*/
+    .box1 {
+        position: absolute;
+        z-index: 1;
+        width: 12vw;
+        margin-top: 0vh;
+        animation-name: move;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+
+    }
+
+    @keyframes move {
+        from {
+            margin-left: 0vw;
+        }
+        to {
+            margin-left: 12vw;
+        }
+    }
+
+
+    .box2 {
+        position: absolute;
+        z-index: 0;
+        width: 12vw;
+        margin-top: 0vh;
+        animation-name: move2;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+
+    }
+
+    @keyframes move2 {
+        from {
+            margin-left: 12vw;
+        }
+        to {
+            margin-left: 0vw;
+        }
+    }
+
+    .box3 {
+        position: absolute;
+        z-index: 0;
+        width: 12vw;
+        margin-top: 0vh;
+        margin-left: 0vw;
+        animation-name: opacity;
+        animation-delay: 4s;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+
+    }
+
+    @keyframes opacity {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1
+        }
+    }
+
+    .homeContent {
+        width: 80vw;
+        height: auto;
+        display: grid;
+        margin: 6vh auto;
+        grid-template-columns: auto auto;
+        grid-template-areas: "area1 area2""area1 area3"
+    }
+    .animation {
+
+        grid-area: area1;
+        position: relative;
+        height: 88vh;
+        width: 30vw;
+        top: 0vh;
+        /*        display: none*/
+    }
+
+    .homeText {
+        grid-area: area2;
+    }
+
+    .homeText p {
+        font-size: 14px;
+        color: #808080;
+        text-align: center
+    }
+
+    .signature {
+        grid-area: area3
+    }
+    .signature img {
+        width: 20vw;
+        /*            display:none*/
+    }
+
+    /*----------content subpage painting-----------*/
+    .mainPaintings {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "area1 area2";
+        width: 80vw;
+        margin: 40px auto
+    }
+
+    .paintings {
+        grid-area: area1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 10px;
+        margin-right: 50px;
+    }
+
+    .textPainting {
+        grid-area: area2
+    }
+
+
+    .painting img {
+        width: 99%;
+        cursor: pointer;
+    }
+
+    .painting img:hover{
+        width: 100%;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+    }
+
+    .painting h3 {
+        margin: 10px auto 0px;
+        font-weight: 300;
+        text-transform: uppercase;
+
+    }
+
+    .infoPainting {
+        display: flex;
+        font-size: 15px;
+
+    }
+
+    .infoPainting div {
+        margin-right: 8px
+    }
+
+    .boxUp {
+        text-align: center;
+        color: #616161;
+        left: 0vh;
+        bottom: 0vh;
+        background-color: rgb(255, 255, 255, 0.7);
+        width: 100vw;;
+        height: 100vh;
+        z-index: 5;
+        display: none;
+        position: fixed;
+        -webkit-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+        -moz-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+        box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+
+
+
+    }
+    .boxUp img {
+        width: auto;
+        height: 500px;
+        display: block;
+        margin: 100px auto;
+    }
+
+
+
+
+
+
+
+
+
+
+    /*----------content subpage photos-----------*/
+    .mainPhotos {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "area1 area2";
+        width: 80vw;
+        margin: 40px auto
+    }
+
+    .photos {
+        grid-area: area1;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-gap: 10px;
+    }
+
+    .textPhotos {
+        grid-area: area2
+    }
+
+
+    .photo img {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .photo h3 {
+        margin: 10px auto 0px;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+
+
+/*----------content subpage about-----------*/
+
+
+.line{
+       border-bottom: 2px solid black;
+       width: 30%;
+       margin: 50px auto;
+    }
+
+.aboutContent img {
+    display: block;
+    width: 50%;
+    margin: 0px auto 0px 0px;
+}
+.aboutContent{
+    width: 80vw;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "area1 area2"
+}
+
+.photoAbout{
+    grid-area: area1;
+}
+
+.textAbout{
+    grid-area: area2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
