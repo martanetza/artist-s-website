@@ -17,6 +17,7 @@ function showDataByCategoryPhoto(List) {
   function showSinglePhotoItemFiltered(p) {
         const copy = templatePhoto.cloneNode(true).content;
         copy.querySelector(".title").textContent = p.title.rendered;
+        copy.querySelector("a").href = "photo_detail.html?phototid=" + p.title.rendered;
 
         if (p._embedded) {
             copy.querySelector("img").src = p._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;

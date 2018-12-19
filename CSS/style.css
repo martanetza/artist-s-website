@@ -818,6 +818,75 @@ video{
     transform: translate(-50%);
 }
 
+/*------------photo detail page content-----------*/
+
+.mySlides{
+    z-index: 2;
+
+}
+
+
+.smallSlides{
+    display: inline;
+    margin: 10px;
+    /*Mozna zrobiÄ‡ ramkÄ™ na wybranym obrazku, albo obrazki z listy na mniejszym opacity, a wybrany na opacity 100%*/
+}
+
+.smallSlideUnderlined{
+    border:4px solid #852a36;
+    margin: 10px;
+}
+
+.sImgInline{
+    display: inline;
+}
+
+
+#photoGrid{
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+    grid-template-areas:
+    "text window"
+    "smallImgs smallImgs";
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+#photoText{
+    grid-area: text;
+    padding-right: 180px;
+    margin-top: 20px;
+}
+
+#photoWindow{
+    grid-area: window;
+    z-index: 3;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.smallImagesBox{
+grid-area: smallImgs;
+}
+
+#photoParagraph{
+    padding-top: 40px;
+}
+
+img.prev{
+    z-index:3;
+    margin-top: 150px;
+    position: absolute;
+}
+
+img.next{
+    z-index:3;
+    margin-top: 150px;
+    margin-left: 490px;
+    position: absolute;
+}
+
 
 
 
