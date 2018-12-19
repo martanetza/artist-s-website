@@ -647,7 +647,13 @@ video{
     }
     .signature img {
         width: 20vw;
+        margin-right: 0px;
         /*            display:none*/
+    }
+
+    #h2homepage{
+        margin-top: 220px;
+        text-align: right;
     }
 
     /*----------content subpage painting-----------*/
