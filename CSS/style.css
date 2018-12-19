@@ -387,7 +387,9 @@ video{
     margin: 30px auto 30px 30px;
 }
 
-
+.aboutP{
+    text-align: justify;
+}
 
 
 /*--------------------------------------desktop------------------------------------------------------*/
@@ -772,7 +774,7 @@ video{
 .line{
        border-bottom: 1px solid #808080;
        width: 30%;
-       margin: 50px auto;
+       margin: 30px auto;
     }
 
 .aboutContent img {
@@ -796,8 +798,19 @@ video{
     grid-area: area2;
 }
 
+.aboutP{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: justify;
+    }
 
-
+video{
+    width: 90%;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
 
 
 
