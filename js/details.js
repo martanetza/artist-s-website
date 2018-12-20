@@ -71,19 +71,17 @@ if(showSlide1 && showSlide2){
             var slides = document.getElementsByClassName("mySlides"); //array
             var smallSlides = document.getElementsByClassName("smallSlides");
 
-            //console.log(smallSlides)
-
-            //.length to ilość elementów w arrayu. Jeśli n większe niż ilość slajdów w arrayu to pokazuje pierwszy slajd
+       //.length is a number of elements in an array. If n is bigger then the number of slides in an array show the first slide
             if (n > slides.length) {
                 slideIndex = 1;
             }
 
-            //Jeśli n mniejsze od 1 to pokazuje ostatni slajd
+            //If n is smaller than one, show the last slide
             if (n < 1) {
                 slideIndex = slides.length
             }
 
-            //każdy slajd "display none"
+            //apply "display none" to all slides
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
                 smallSlides[i].classList.remove("smallSlideUnderlined");
@@ -91,50 +89,50 @@ if(showSlide1 && showSlide2){
             }
 
 
-            //-1, żeby pokazać pierwszy slajd, bo w arrayu start od 0, a var zdef jako 1
+            //-1, to show the first slide, because arrays atart from 0 and our var slideIndex = 1;
             slides[slideIndex - 1].style.display = "inline";
             smallSlides[slideIndex -1].classList.add("smallSlideUnderlined");
 
-            //jeśli jest wyświetlany inny slajd niż pierwszy to wyświetlaj wcześniejszy slajd
+            //if other than the first slide is displayed, display the preceding slide
             if (slideIndex != 1){
                 smallSlides[slideIndex - 2].style.display = "inline";
             }
-            //jeśli indeks wyświetlanego slajdu jest większy niż 2 to wyświetlaj też slajd który jest o 2 miejsca wcześniej w array
+            //if index of the displayed slide is bigger than 2, display also the second preceding slide of the array
             if (slideIndex > 2){
                 smallSlides[slideIndex - 3].style.display = "inline";
             }
-
+            //if index of the displayed slide is bigger than 3, display also the third preceding slide
             if (slideIndex > 3){
                 smallSlides[slideIndex - 4].style.display = "inline";
             }
-            //wyświetlaj bieżący slajd
+            //display the current slide
             smallSlides[slideIndex - 1].style.display = "inline";
 
-            //jeśli nie jest wyświetlany ostatni slajd to wyświetl następny
+            //if other than last slide is displayed, display the last one
             if (slideIndex != slides.length){
                 smallSlides[slideIndex].style.display = "inline";
             }
 
-            //jeśli nie jest wyświetlany przedostatni slajd to
+            //if other than one before last slide is displayed, display the second following
             if (slideIndex != (slides.length -1)){
                 smallSlides[slideIndex + 1].style.display = "inline";
             }
 
 
-           //jeśli jest wyświetlany pierwszy slajd to wyświetl drugi slajd
+           //if the first slide is displayed, then display the 4 one
             if (slideIndex == 1){
                 smallSlides[3].style.display = "inline";
             }
 
-            //jeśli wyświetlony pierwszy lub drugi to pokazanie trzeciego
+            //if slide index is smaller or equal to 2, display the 5th slide
             if (slideIndex <= 2){
                 smallSlides[4].style.display = "inline";
             }
 
-            //jeśli wyświetlony pierwszy lub drugi to pokazanie trzeciego
-//            if (slideIndex <= 3){
-//                smallSlides[5].style.display = "inline";
-//            }
+            //if slide index is smaller or equal to 3, display the 6th slide
+            if (slideIndex <= 3){
+                smallSlides[5].style.display = "inline";
+            }
 
         }
 

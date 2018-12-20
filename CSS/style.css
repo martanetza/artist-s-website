@@ -36,10 +36,12 @@ h1 {
 
 
 main p {
-    font-size: 14px;
     color: #808080;
-    text-align: center;
+    text-align: justify;
+    margin-top: 0px;
+    line-height: 1.5;
 }
+
 
 /*-------------header---------------------*/
 
@@ -230,8 +232,9 @@ img {
 .textPaintingAnimals,
 .textPaintingPortraits {
     grid-area: area2;
-    margin: 50px 0px;
+    margin: 0px 0px;
     text-align: center;
+    width: 277px;
 }
 
 
@@ -853,6 +856,8 @@ video{
     "smallImgs smallImgs";
     padding-left: 90px;
     padding-right: 90px;
+    width: 80vw;
+    margin: 40px auto;
 }
 
 #photoText{
