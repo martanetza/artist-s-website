@@ -807,14 +807,14 @@ main{
         width: auto;
         height: 500px;
         display: block;
-        margin: 100px auto;
+        margin: 0px auto;
     }
 
 
 .back {
     margin-right: 5vw;
     margin-top: 5vh;
-    font-size: 40px;
+    font-size: 30px;
     text-align: right;
 }
 
