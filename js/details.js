@@ -4,6 +4,7 @@ let TemplPhotoDetails2 = document.querySelector(".photoDetailsTemplate2")
 
 let showSlide1 = false
 let showSlide2 = false
+var slideIndex = 1;
 
 const params2 = new
 URLSearchParams(window.location.search);
@@ -11,7 +12,7 @@ const filterPhotoID = params2.get("phototid");
 
 fetch(baseLink2 + filterPhotoID + "?_embed").then(promise => promise.json()).then(data => showDetailsPhoto(data));
 
-console.log(filterPhotoID)
+//console.log(filterPhotoID)
 
 function showDetailsPhoto(Data) {
     Data.forEach(showDetailsPhotoOne);
@@ -20,7 +21,7 @@ function showDetailsPhoto(Data) {
 function showDetailsPhotoOne(photo) {
 
     const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
-            console.log(photo.id)
+            //console.log(photo.id)
      if (photo._embedded) {
         copyPhoto.querySelector("img").src = photo._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
     } else {
@@ -50,17 +51,27 @@ showSlide2 = true
 //slideshow
 
 if(showSlide1 && showSlide2){
-console.log("check")
+//console.log("check")
 
- var slideIndex = 1;
+ //var slideIndex = 1;
 
 
-        function showSlides(n) {
+
+        showSlides(slideIndex); //wywołanie funkcji
+
+
+}
+
+}
+
+
+
+    function showSlides(n) {
             var i;
             var slides = document.getElementsByClassName("mySlides"); //array
             var smallSlides = document.getElementsByClassName("smallSlides");
 
-            console.log(smallSlides)
+            //console.log(smallSlides)
 
             //.length to ilość elementów w arrayu. Jeśli n większe niż ilość slajdów w arrayu to pokazuje pierwszy slajd
             if (n > slides.length) {
@@ -134,19 +145,14 @@ console.log("check")
 
         //show slide
          function showSlide(n) {
-             slideIndex = n;
+                slideIndex = n;
             showSlides(slideIndex);
         }
 
-        showSlides(slideIndex); //wywołanie funkcji
-
-
-}
 
 
 
 
-}
 
 
 

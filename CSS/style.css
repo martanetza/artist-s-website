@@ -829,6 +829,8 @@ video{
 .smallSlides{
     display: inline;
     margin: 10px;
+    width: 198px;
+    height: auto;
     /*Mozna zrobiÄ‡ ramkÄ™ na wybranym obrazku, albo obrazki z listy na mniejszym opacity, a wybrany na opacity 100%*/
 }
 

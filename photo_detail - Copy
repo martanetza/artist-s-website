@@ -100,9 +100,8 @@
         <img src="img/linkedin.png" alt="in_icon">
     </footer>
 
-  <script src="js/index.js"></script>
     <script src="js/details.js"></script>
-
+    <script src="js/index.js"></script>
 </body>
 
 </html>
