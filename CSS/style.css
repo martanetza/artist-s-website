@@ -9,6 +9,10 @@ border hover - #872936
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
 /*--------------------mobile version-------------------------------------*/
+main{
+    padding-bottom: 200px;
+}
+
 .active {
     display: block;
 }
@@ -457,6 +461,10 @@ video{
 /*--------------------------------------desktop------------------------------------------------------*/
 
 @media all and (min-width:991px) {
+
+main{
+    padding-bottom: 0px;
+}
 
 
     body {
