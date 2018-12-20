@@ -828,6 +828,9 @@ video{
 
 }
 
+.mySlides img{
+        width: 600px;
+    }
 
 .smallSlides{
     display: inline;
