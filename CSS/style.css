@@ -841,12 +841,13 @@ video{
 
 .mySlides img{
         width: 600px;
+        margin-right: 10px;
     }
 
 .smallSlides{
     display: inline;
     margin: 10px;
-    width: 198px;
+    width: 188px;
     height: auto;
     /*Mozna zrobiÄ‡ ramkÄ™ na wybranym obrazku, albo obrazki z listy na mniejszym opacity, a wybrany na opacity 100%*/
 }
@@ -880,12 +881,11 @@ video{
     margin-top: 70px;
     height: 400px;
     overflow: auto;
-    text-align: left;
 }
 
-#photoText p{
+/*#photoText p{
         text-align: left
-    }
+    }*/
 
 #photoWindow{
     grid-area: window;
@@ -900,6 +900,7 @@ grid-area: smallImgs;
 
 #photoParagraph{
     padding-top: 0px;
+    margin-right: 20px;
 }
 
 img.prev{

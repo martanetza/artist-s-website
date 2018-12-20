@@ -18,6 +18,13 @@ function showDetailsPhoto(Data) {
     Data.forEach(showDetailsPhotoOne);
     Data.forEach(showDetailsPhotoSmall);
 
+
+    var inputs = document.querySelectorAll(".sImgInline");
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].innerHTML = '<a onclick="showSlide(' + (i + 1) + ')">' + inputs[i].innerHTML + '</a>';
+}
+
+
 function showDetailsPhotoOne(photo) {
 
     console.log(photo.content.rendered)
@@ -43,8 +50,9 @@ function showDetailsPhotoSmall(photo2) {
      if (photo2._embedded) {
         copyPhoto2.querySelector("img").src = photo2._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
     } else {
-        copyPhoto2.querySelector("img").remove()
+        copyPhoto2.querySelector("img").remove();
     }
+
     document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
 showSlide2 = true
 
@@ -121,23 +129,31 @@ if(showSlide1 && showSlide2){
 
             //if other than one before last slide is displayed, display the second following
             if (slideIndex != (slides.length -1)){
-                smallSlides[slideIndex + 1].style.display = "inline";
+                if (slides.length >= (slideIndex + 1)){
+                    smallSlides[slideIndex + 1].style.display = "inline";
+                }
             }
 
 
            //if the first slide is displayed, then display the 4 one
             if (slideIndex == 1){
-                smallSlides[3].style.display = "inline";
+                if (slides.length > 3){
+                    smallSlides[3].style.display = "inline";
+                }
             }
 
             //if slide index is smaller or equal to 2, display the 5th slide
             if (slideIndex <= 2){
-                smallSlides[4].style.display = "inline";
+                if (slides.length > 4){
+                    smallSlides[4].style.display = "inline";
+                }
             }
 
             //if slide index is smaller or equal to 3, display the 6th slide
             if (slideIndex <= 3){
-                smallSlides[5].style.display = "inline";
+                if ( slides.length > 5){
+                    smallSlides[5].style.display = "inline";
+                }
             }
 
         }
