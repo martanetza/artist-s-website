@@ -234,7 +234,6 @@ img {
     grid-area: area2;
     margin: 0px 0px;
     text-align: center;
-    width: 277px;
 }
 
 
@@ -660,6 +659,14 @@ video{
     }
 
     /*----------content subpage painting-----------*/
+
+    .textPaintingAnimals,
+    .textPaintingPortraits {
+       margin: 0px 0px;
+        text-align: center;
+        width: 277px;
+}
+
     .mainPaintings {
         display: grid;
         grid-template-columns: 2fr 1fr;
