@@ -33,7 +33,9 @@ h1 {
     ;
 }
 
-
+#h2homepage{
+    display: none;
+}
 
 main p {
     color: #808080;
@@ -654,6 +656,7 @@ video{
     }
 
     #h2homepage{
+        display: block;
         margin-top: 220px;
         text-align: right;
     }
