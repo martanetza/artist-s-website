@@ -44,12 +44,19 @@ function showSingleItemFiltered(p) {
 if (filterID == 7) {
     document.querySelector(".textPaintingAnimals").style.display = "block"
     document.querySelector(".textPaintingPortraits").style.display = "none"
+    document.querySelector(".textPaintingCollection").style.display = "none"
 }
 if (filterID == 6) {
     document.querySelector(".textPaintingAnimals").style.display = "none"
+    document.querySelector(".textPaintingCollection").style.display = "none"
     document.querySelector(".textPaintingPortraits").style.display = "block"
 }
 
+if (filterID == 11) {
+    document.querySelector(".textPaintingAnimals").style.display = "none"
+    document.querySelector(".textPaintingPortraits").style.display = "none"
+    document.querySelector(".textPaintingCollection").style.display = "block"
+}
 
 function showDetails(painting) {
 

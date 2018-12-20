@@ -30,3 +30,24 @@ function showDataByCategoryPhoto(List) {
         document.querySelector(".photos").appendChild(copy)
 
     }
+
+if (filterID == 9) {
+    document.querySelector(".textFilmPhoto").style.display = "block"
+    document.querySelector(".textPhotoStories").style.display = "none"
+
+}
+if (filterID == 10) {
+    document.querySelector(".textPhotoStories").style.display = "block"
+    document.querySelector(".textFilmPhoto").style.display = "none"
+
+}
+
+
+
+
+
+
+
+
+
+
