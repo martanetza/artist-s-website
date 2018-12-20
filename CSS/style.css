@@ -8,6 +8,7 @@ border hover - #872936
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 
+/*--------------------mobile version-------------------------------------*/
 .active {
     display: block;
 }
@@ -355,6 +356,62 @@ img {
     color: #808080;
 }
 
+/*----------content subpage photostories-----------*/
+
+#photoGrid{
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows:  auto auto;
+    grid-template-areas:
+    "text"
+    "smallImgs";
+    padding-left: 90px;
+    padding-right: 90px;
+    width: 80vw;
+    margin: 40px auto;
+}
+
+#photoText{
+    grid-area: text;
+    padding-right: 20px;
+    margin-top: 70px;
+    height: 400px;
+    overflow: visible;
+}
+
+.smallSlides{
+    display: block;
+    margin: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.smallSlideUnderlined{
+    margin: 10px;
+}
+
+
+.mySlides img{
+        width: 600px;
+        margin-right: 10px;
+     display: none;
+    }
+
+
+.smallImagesBox{
+grid-area: smallImgs;
+}
+
+
+/*.mySlides{
+    z-index: 2;*/
+
+}
+
+/*.mySlides img{
+        width: 600px;
+        margin-right: 10px;
+    }*/
 
 
 /*----------content subpage about-----------*/
@@ -846,6 +903,7 @@ video{
 }
 
 .mySlides img{
+        display: block;
         width: 600px;
         margin-right: 10px;
     }
@@ -888,10 +946,6 @@ video{
     height: 400px;
     overflow: auto;
 }
-
-/*#photoText p{
-        text-align: left
-    }*/
 
 #photoWindow{
     grid-area: window;
