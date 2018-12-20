@@ -282,14 +282,15 @@ img {
 
 .boxUp img {
         width: auto;
-        height: 1000px;
+        height: 700px;
         display: block;
         margin: 500px auto;
 }
 
 .back {
     margin-right: 5vw;
-    font-size: 40px;
+    margin-top: 5vh;
+    font-size: 70px;
     text-align: right;
 }
 
@@ -745,7 +746,12 @@ video{
     }
 
 
-
+.back {
+    margin-right: 5vw;
+    margin-top: 5vh;
+    font-size: 40px;
+    text-align: right;
+}
 
 
 
