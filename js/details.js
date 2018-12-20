@@ -20,6 +20,12 @@ function showDetailsPhoto(Data) {
 
 function showDetailsPhotoOne(photo) {
 
+    console.log(photo.content.rendered)
+    if(photo.content.rendered){
+       document.querySelector("#photoParagraph").innerHTML = photo.content.rendered
+       }
+
+
     const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
             //console.log(photo.id)
      if (photo._embedded) {

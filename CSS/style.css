@@ -873,11 +873,18 @@ video{
     margin: 40px auto;
 }
 
-#photoText{
+ #photoText{
     grid-area: text;
-    padding-right: 180px;
-    margin-top: 20px;
+    padding-right: 20px;
+    margin-top: 70px;
+    height: 400px;
+    overflow: auto;
+    text-align: left;
 }
+
+#photoText p{
+        text-align: left
+    }
 
 #photoWindow{
     grid-area: window;
@@ -891,7 +898,7 @@ grid-area: smallImgs;
 }
 
 #photoParagraph{
-    padding-top: 40px;
+    padding-top: 0px;
 }
 
 img.prev{
@@ -906,8 +913,6 @@ img.next{
     margin-left: 490px;
     position: absolute;
 }
-
-
 
 
 
