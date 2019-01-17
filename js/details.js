@@ -6,7 +6,7 @@ let showSlide1 = false
 let showSlide2 = false
 var slideIndex = 1;
 
-/*pl ładuje wszystkie obrazki/posty, które mają tą samą nazwę co koniec query string (photoid? - key, value pair?) najpierw niewidoczne, potem funkcja showDetailsPhotoData*/
+/*It loads all images/posts, which have the same name as query string (key - value pair)*/
     const params2 = new
     URLSearchParams(window.location.search);
     const filterPhotoID = params2.get("phototid");
@@ -27,11 +27,10 @@ function showDetailsPhoto(Data) {
     }
 
 
-    /*Tekst paragrafu*/
+    /*Text of the paragraph*/
     function showDetailsPhotoOne(photo) {
 
         console.log(photo.content)
-        /*Jeśli coś jest w tym polu, to wrzuca to do treści paragrafu*/
         if(photo.content.rendered){
            document.querySelector("#photoParagraph").innerHTML = photo.content.rendered
         }
@@ -66,8 +65,6 @@ if(showSlide1 && showSlide2){
     showSlides(slideIndex);
     var timeoutObj;
     slidesRunner();
-    //wywołanie funkcji
-
 }
 
 }
@@ -75,9 +72,7 @@ if(showSlide1 && showSlide2){
 
 
 
-
-
-
+/*Function showSlides is inspired with the code of an automatic slideshow from W3Schools: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto */
 
     function showSlides(n) {
             var i;
@@ -142,8 +137,6 @@ if(showSlide1 && showSlide2){
                 }
             }
 
-
-
            //if the first slide is displayed, then display the 4 one
             if (slideIndex == 1){
                 if (bigSlides.length > 3){
@@ -164,12 +157,6 @@ if(showSlide1 && showSlide2){
                     smallSlides[5].style.display = "inline";
                 }
             }
-
-
-
-            //onsole.log(slideIndex);
-
-
 
 
             }
