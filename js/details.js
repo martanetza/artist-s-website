@@ -5,6 +5,7 @@ let TemplPhotoDetails2 = document.querySelector(".photoDetailsTemplate2")
 let showSlide1 = false
 let showSlide2 = false
 var slideIndex = 1;
+var photoSrcs = [];
 
 /*It loads all images/posts, which have the same name as query string (key - value pair)*/
     const params2 = new
@@ -52,6 +53,7 @@ function showDetailsPhoto(Data) {
         const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
          if (photo2._embedded) {
             copyPhoto2.querySelector("img").src = photo2._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+             photoSrcs.push(photo2._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
         } else {
             copyPhoto2.querySelector("img").remove();
         }
@@ -78,6 +80,7 @@ if(showSlide1 && showSlide2){
             var i;
             var bigSlides = document.getElementsByClassName("mySlides"); //array
             var smallSlides = document.getElementsByClassName("smallSlides");
+            var smallSlidesDivs = document.getElementsByClassName("smallPhotosDivs");
 
             //.length is a number of elements in an array. If n is bigger then the number of slides in an array take into account the first slide
             if (n > bigSlides.length) {
@@ -93,8 +96,9 @@ if(showSlide1 && showSlide2){
             //apply "display none" to all slides (big and small)
             for (i = 0; i < bigSlides.length; i++) {
                 bigSlides[i].style.display = "none";
-                smallSlides[i].classList.remove("smallSlideUnderlined");
+                //smallSlides[i].classList.remove("smallSlideUnderlined");
                 smallSlides[i].style.display = "none";
+                //smallSlidesDivs[1].style.display = "none";
             }
 
 
@@ -102,61 +106,37 @@ if(showSlide1 && showSlide2){
             bigSlides[slideIndex - 1].style.display = "inline";
 
             //underlining the current image
-            smallSlides[slideIndex -1].classList.add("smallSlideUnderlined");
+            //smallSlides[slideIndex -1].classList.add("smallSlideUnderlined");
 
-
-
-
-
-
-
-            //if other than the first slide is displayed, display the preceding slide
-            if (slideIndex != 1){
-                smallSlides[slideIndex - 2].style.display = "inline";
+var i;
+        var t;
+if (slideIndex == 1 || slideIndex == 2 || slideIndex == 3){
+    for (i = 0; i < smallSlidesDivs.length; i++) {
+        if (photoSrcs.length > i){
+            t = "<img src='" + photoSrcs[i] + "'";
+            if (i == (slideIndex - 1)){
+                t += " class='smallSlideUnderlined'";
             }
-            //if index of the displayed slide is bigger than 2, display also the second preceding slide of the array
-            if (slideIndex > 2){
-                smallSlides[slideIndex - 3].style.display = "inline";
+            t += " />";
+            smallSlidesDivs[i].innerHTML = t
+        }
+    }
+}
+        var j;
+if (slideIndex > 3 && slideIndex < (photoSrcs.length - 2)){
+    for (i = 0; i < smallSlidesDivs.length; i++) {
+        j=i+(slideIndex-3);//poprzedni if zajmuje się pierwszymi 3 slajdami
+        if (photoSrcs.length > j){
+            t = "<img src='" + photoSrcs[j] + "'";
+            if (i == 2){
+                t += " class='smallSlideUnderlined'";
             }
-            //if index of the displayed slide is bigger than 3, display also the third preceding slide
-            if (slideIndex > 3){
-                smallSlides[slideIndex - 4].style.display = "inline";
-            }
-            //display the current slide
-            smallSlides[slideIndex - 1].style.display = "inline";
-
-            //if other than last slide is displayed, display the last one
-            if (slideIndex != bigSlides.length){
-                smallSlides[slideIndex].style.display = "inline";
-            }
-
-            //if other than one before last slide is displayed, display the second following
-            if (slideIndex != (bigSlides.length -1)){
-                if (bigSlides.length >= (slideIndex + 1)){
-                    smallSlides[slideIndex + 1].style.display = "inline";
-                }
-            }
-
-           //if the first slide is displayed, then display the 4 one
-            if (slideIndex == 1){
-                if (bigSlides.length > 3){
-                    smallSlides[3].style.display = "inline";
-                }
-            }
-
-            //if slide index is smaller or equal to 2, display the 5th slide
-            if (slideIndex <= 2){
-                if (bigSlides.length > 4){
-                    smallSlides[4].style.display = "inline";
-                }
-            }
-
-            //if slide index is smaller or equal to 3, display the 6th slide
-            if (slideIndex <= 3){
-                if (bigSlides.length > 5){
-                    smallSlides[5].style.display = "inline";
-                }
-            }
+            t += " />";
+            smallSlidesDivs[i].innerHTML = t
+        }
+    }
+}
+//to do: przesunięcie podkreślenia na ostatnie 3 obrazki
 
 
             }

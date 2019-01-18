@@ -158,6 +158,8 @@ footer {
 
 img {
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 .box1 {
@@ -393,7 +395,8 @@ img {
 }
 
 .smallSlideUnderlined{
-    margin: 10px;
+    width: 95%;
+    height: auto;
 }
 
 
@@ -914,15 +917,16 @@ video{
 
 .mySlides img{
         display: block;
+        height: 100%;
         width: 600px;
-        margin-right: 10px;
+        margin-right: 0px;
     }
 
 .smallSlides{
     display: inline;
     margin-right: 2%;
     margin-left: 0px;
-    width: 14.5%;
+    width: 100%;
     height: auto;
     float: left;
 }
@@ -954,6 +958,7 @@ video{
     padding-right: 20px;
     margin-top: 70px;
     height: 400px;
+    min-width: 660px;
     overflow: auto;
 }
 
@@ -966,6 +971,12 @@ video{
 
 .smallImagesBox{
 grid-area: smallImgs;
+display: grid;
+grid-gap: 2%;
+grid-template-columns: 6;
+grid-template-rows: 1;
+grid-template-areas:
+"SubDiv1 SubDiv2 SubDiv3 SubDiv4 SubDiv5 SubDiv6";
 }
 
 #photoParagraph{
@@ -987,7 +998,9 @@ img.next{
 }
 
 
-
+    .smallPhotosDivs{
+    height: 0%;
+    }
 
 
 
