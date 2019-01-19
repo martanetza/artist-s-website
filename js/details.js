@@ -109,16 +109,16 @@ if(showSlide1 && showSlide2){
             //smallSlides[slideIndex -1].classList.add("smallSlideUnderlined");
 
 var i;
-        var t;
+var t;
 if (slideIndex == 1 || slideIndex == 2 || slideIndex == 3){
     for (i = 0; i < smallSlidesDivs.length; i++) {
         if (photoSrcs.length > i){
-            t = "<img src='" + photoSrcs[i] + "'";
+            t = "<a onclick='showBigSlide(" + (i) + ")'><img src='" + photoSrcs[i] + "'";
             if (i == (slideIndex - 1)){
                 t += " class='smallSlideUnderlined'";
             }
-            t += " />";
-            smallSlidesDivs[i].innerHTML = t
+            t += " /></a>";
+            smallSlidesDivs[i].innerHTML = t;
         }
     }
 }
@@ -127,22 +127,27 @@ if (slideIndex > 3 && slideIndex < (photoSrcs.length - 2)){
     for (i = 0; i < smallSlidesDivs.length; i++) {
         j=i+(slideIndex-3);//poprzedni if zajmuje się pierwszymi 3 slajdami
         if (photoSrcs.length > j){
-            t = "<img src='" + photoSrcs[j] + "'";
+            t = "<a onclick='showBigSlide(" + (i) + ")'><img src='" + photoSrcs[j] + "'";
             if (i == 2){
                 t += " class='smallSlideUnderlined'";
             }
-            t += " />";
-            smallSlidesDivs[i].innerHTML = t
+            t += " /></a.";
+            smallSlidesDivs[i].innerHTML = t;
         }
     }
 }
 //to do: przesunięcie podkreślenia na ostatnie 3 obrazki
+for (i = 1; i < smallSlidesDivs.length; i++) {
+    if (smallSlidesDivs[i].innerHTML == smallSlidesDivs[i - 1].innerHTML){
+        smallSlidesDivs[i].innerHTML = '';
+    }
+}
 
 
             }
 
 function slidesRunner(){
-    timeoutObj = setTimeout(slidesRunner, 3000);
+    timeoutObj = setTimeout(slidesRunner, 1000);
 
     showSlides(slideIndex);
      slideIndex++;
