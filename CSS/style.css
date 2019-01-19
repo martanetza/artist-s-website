@@ -25,13 +25,13 @@ main{
 body {
     font-family: "open sans";
     font-weight: 300;
-    color: #808080;
+    color: #666666;
 }
 
 h1 {
     font-size: 50px;
     text-transform: uppercase;
-    color: #808080;
+    color: #666666;
     font-family: "Raleway";
     font-weight: 400;
     margin: 90px 0vw 10px;
@@ -43,7 +43,7 @@ h1 {
 }
 
 main p {
-    color: #808080;
+    color: #666666;
     text-align: justify;
     margin-top: 0px;
     line-height: 1.5;
@@ -96,7 +96,7 @@ header .navigation {
 .navigation a:hover,
 .navigation a:active {
     text-decoration: none;
-    color: #808080;
+    color: #666666;
 }
 
 
@@ -534,7 +534,7 @@ main{
     .navigation a:hover,
     .navigation a:active {
         text-decoration: none;
-        color: #808080;
+        color: #666666;
     }
 
     .sub_menu_1,
@@ -710,7 +710,7 @@ main{
 
     .homeText p {
         font-size: 14px;
-        color: #808080;
+        color: #666666;
         text-align: center
     }
 
