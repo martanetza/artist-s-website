@@ -575,6 +575,10 @@ main{
         border-bottom: 2px solid #872936;
 
     }
+
+    #on{
+        border-bottom: 2px solid #872936;
+    }
     .navigation h2 {
         display: inline;
         margin-right: 20px;

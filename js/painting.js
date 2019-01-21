@@ -65,7 +65,6 @@ function showDetails(painting) {
     const clone = templateDetail.cloneNode(true).content;
     clone.querySelector("img").src = painting.acf.image_large.url;
     clone.querySelector(".back a").href = "painting.html?filterid=" + painting.paintings[0];
-
     document.querySelector(".boxUp").appendChild(clone);
 
 
