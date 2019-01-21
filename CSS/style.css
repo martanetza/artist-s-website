@@ -246,6 +246,7 @@ img {
 }
 
 
+
 .painting img {
     width: 100%;
     margin: 0px;
@@ -745,7 +746,7 @@ main{
     .mainPaintings {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-areas: "area1 area2";
+        grid-template-areas: "area3 area3" "area1 area2";
         width: 80vw;
         margin: 40px auto
     }
@@ -762,6 +763,14 @@ main{
         grid-area: area2
     }
 
+    .pageTitle{
+    grid-area: area3
+    }
+
+    .pageTitle h2{
+        text-transform: uppercase;
+        font-weight: 200;
+    }
 
     .painting img {
         width: 99%;
