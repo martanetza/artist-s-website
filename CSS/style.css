@@ -799,6 +799,7 @@ main{
         margin: 10px auto 0px;
         font-weight: 300;
         text-transform: uppercase;
+        font-size: 15px;
 
     }
 
@@ -886,7 +887,7 @@ main{
         margin: 10px auto 0px;
         font-weight: 300;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 15px;
     }
 
 
@@ -945,6 +946,7 @@ video{
         display: block;
         width: 600px;
         margin-right: 10px;
+        float: right;
     }
 
 .smallSlides{
