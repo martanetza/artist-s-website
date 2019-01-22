@@ -40,6 +40,8 @@ h1 {
 
 #h2homepage{
     display: none;
+    font-weight: lighter;
+    font-size: 26px;
 }
 
 main p {
@@ -541,7 +543,6 @@ main{
         position: absolute;
         display: none;
         background-color: white;
-        border: 1px solid black;
         width: 160px
     }
 
@@ -570,7 +571,7 @@ main{
     }
 
     .navigation h2:hover {
-        border-bottom: 2px solid #872936;
+        border-bottom: 1.2px solid #872936;
 
     }
     .navigation h2 {
@@ -713,18 +714,21 @@ main{
     }
 
     .signature {
-        grid-area: area3
+        grid-area: area3;
+
     }
     .signature img {
         width: 20vw;
         margin-right: 0px;
+        margin-top: 10px;
         /*            display:none*/
     }
 
     #h2homepage{
         display: block;
-        margin-top: 220px;
-        text-align: right;
+        margin-top: 120px;
+        margin-left: 10px;
+        text-align: left;
     }
 
     /*----------content subpage painting-----------*/
