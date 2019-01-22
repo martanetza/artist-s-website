@@ -226,7 +226,7 @@ img {
 .mainPaintings {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "area2" "area1";
+    grid-template-areas: "area3" "area2" "area1";
     width: 80vw;
     margin: 40px auto
 }
@@ -237,6 +237,15 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     grid-gap: 30px;
 }
+
+.pageTitle{
+    grid-area: area3;
+}
+
+  .pageTitle h2{
+        text-transform: uppercase;
+        font-weight: 200;
+    }
 
 .textPaintingAnimals,
 .textPaintingPortraits {
