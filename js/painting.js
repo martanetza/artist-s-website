@@ -4,6 +4,18 @@ let templateDetail = document.querySelector(".paintingTemplateDetail");
 
 //load data by paintings category
 
+fetch(PaintingCatLink + "/" + filterID).then(e => e.json()).then(showTitle);
+
+    function showTitle(t){
+        let templateTitle = document.querySelector(".pageTitleTmpl")
+        const copy = templateTitle.cloneNode(true).content;
+        copy.querySelector("h2").textContent = t.name;
+        document.querySelector(".pageTitle").appendChild(copy)
+
+
+        console.log("showTitle_test")
+    }
+
 function loadContByCategory(filterID) {
     fetch(baseLink + "painting?paintings=" + filterID + "&_embed").then(e => e.json()).then(showDataByCategory);
     console.log(filterID)
@@ -28,6 +40,10 @@ function showSingleItemFiltered(p) {
     } else {
         copy.querySelector(".painting img").remove()
     }
+
+    console.log(p)
+
+
 
     copy.querySelector("img").addEventListener("click", event => {
                     event.preventDefault();
@@ -65,7 +81,6 @@ function showDetails(painting) {
     const clone = templateDetail.cloneNode(true).content;
     clone.querySelector("img").src = painting.acf.image_large.url;
     clone.querySelector(".back a").href = "painting.html?filterid=" + painting.paintings[0];
-
     document.querySelector(".boxUp").appendChild(clone);
 
 

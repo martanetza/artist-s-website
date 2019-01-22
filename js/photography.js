@@ -1,6 +1,19 @@
 let templatePhoto = document.querySelector(".photoTemplate");
 
 
+fetch(PhotoCatLink + "/" + filterID).then(e => e.json()).then(showTitle);
+
+    function showTitle(t){
+        let templateTitle = document.querySelector(".pageTitleTmpl")
+        const copy = templateTitle.cloneNode(true).content;
+        copy.querySelector("h2").textContent = t.name;
+        document.querySelector(".pageTitle").appendChild(copy)
+
+
+        console.log("showTitle_test")
+    }
+
+
 function loadContByCategoryPhoto(filterID) {
         fetch(baseLink + "photography?photo=" + filterID + "&_embed").then(e => e.json()).then(showDataByCategoryPhoto);
             console.log("test")

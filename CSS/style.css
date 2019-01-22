@@ -25,13 +25,13 @@ main{
 body {
     font-family: "open sans";
     font-weight: 300;
-    color: #808080;
+    color: #666666;
 }
 
 h1 {
     font-size: 50px;
     text-transform: uppercase;
-    color: #808080;
+    color: #666666;
     font-family: "Raleway";
     font-weight: 400;
     margin: 90px 0vw 10px;
@@ -45,7 +45,7 @@ h1 {
 }
 
 main p {
-    color: #808080;
+    color: #666666;
     text-align: justify;
     margin-top: 0px;
     line-height: 1.5;
@@ -98,7 +98,7 @@ header .navigation {
 .navigation a:hover,
 .navigation a:active {
     text-decoration: none;
-    color: #808080;
+    color: #666666;
 }
 
 
@@ -108,14 +108,16 @@ header .navigation {
     letter-spacing: 3px;
     font-weight: 300;
     font-size: 35px;
+    text-transform: uppercase;
 }
+
 
 .sub_menu_1 a,
 .sub_menu_2 a {
     font-size: 25px;
     display: block;
     margin: 30px 30px;
-
+    text-transform: uppercase;
 }
 
 /*--------------footer--------------------*/
@@ -226,7 +228,7 @@ img {
 .mainPaintings {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "area2" "area1";
+    grid-template-areas: "area3" "area2" "area1";
     width: 80vw;
     margin: 40px auto
 }
@@ -238,12 +240,22 @@ img {
     grid-gap: 30px;
 }
 
+.pageTitle{
+    grid-area: area3;
+}
+
+  .pageTitle h2{
+        text-transform: uppercase;
+        font-weight: 200;
+    }
+
 .textPaintingAnimals,
 .textPaintingPortraits {
     grid-area: area2;
     margin: 0px 0px;
     text-align: center;
 }
+
 
 
 .painting img {
@@ -325,7 +337,7 @@ img {
 .mainPhotos {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "area2" "area1";
+    grid-template-areas: "area3" "area2" "area1";
     width: 80vw;
     margin: 40px auto
 }
@@ -341,6 +353,9 @@ img {
     grid-area: area2
 }
 
+ .pageTitle{
+    grid-area: area3;
+    }
 
 .photo img {
     width: 100%;
@@ -534,7 +549,7 @@ main{
     .navigation a:hover,
     .navigation a:active {
         text-decoration: none;
-        color: #808080;
+        color: #666666;
     }
 
     .sub_menu_1,
@@ -573,6 +588,10 @@ main{
     .navigation h2:hover {
         border-bottom: 1.2px solid #872936;
 
+    }
+
+    #on{
+        border-bottom: 2px solid #872936;
     }
     .navigation h2 {
         display: inline;
@@ -709,7 +728,7 @@ main{
 
     .homeText p {
         font-size: 14px;
-        color: #808080;
+        color: #666666;
         text-align: center
     }
 
@@ -743,7 +762,7 @@ main{
     .mainPaintings {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-areas: "area1 area2";
+        grid-template-areas: "area3 area3" "area1 area2";
         width: 80vw;
         margin: 40px auto
     }
@@ -760,6 +779,14 @@ main{
         grid-area: area2
     }
 
+    .pageTitle{
+    grid-area: area3
+    }
+
+    .pageTitle h2{
+        text-transform: uppercase;
+        font-weight: 200;
+    }
 
     .painting img {
         width: 99%;
@@ -832,7 +859,7 @@ main{
     .mainPhotos {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-areas: "area1 area2";
+        grid-template-areas: "area3 area3" "area1 area2";
         width: 80vw;
         margin: 40px auto
     }
@@ -847,6 +874,10 @@ main{
 
     .textPhotos {
         grid-area: area2
+    }
+
+    .pageTitle{
+    grid-area: area3;
     }
 
 
@@ -922,15 +953,15 @@ video{
 
 .smallSlides{
     display: inline;
-    margin: 10px;
-    width: 188px;
+    margin-right: 2%;
+    margin-left: 0px;
+    width: 14.5%;
     height: auto;
-    /*Mozna zrobiÄ‡ ramkÄ™ na wybranym obrazku, albo obrazki z listy na mniejszym opacity, a wybrany na opacity 100%*/
+    float: left;
 }
 
 .smallSlideUnderlined{
     border:4px solid #852a36;
-    margin: 10px;
 }
 
 .sImgInline{
