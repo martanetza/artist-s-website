@@ -335,7 +335,7 @@ img {
 .mainPhotos {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-areas: "area2" "area1";
+    grid-template-areas: "area3" "area2" "area1";
     width: 80vw;
     margin: 40px auto
 }
@@ -351,6 +351,9 @@ img {
     grid-area: area2
 }
 
+ .pageTitle{
+    grid-area: area3;
+    }
 
 .photo img {
     width: 100%;
@@ -852,7 +855,7 @@ main{
     .mainPhotos {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-areas: "area1 area2";
+        grid-template-areas: "area3 area3" "area1 area2";
         width: 80vw;
         margin: 40px auto
     }
@@ -867,6 +870,10 @@ main{
 
     .textPhotos {
         grid-area: area2
+    }
+
+    .pageTitle{
+    grid-area: area3;
     }
 
 
