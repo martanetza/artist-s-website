@@ -83,10 +83,6 @@ function showDetails(painting) {
     clone.querySelector(".back a").href = "painting.html?filterid=" + painting.paintings[0];
     document.querySelector(".boxUp").appendChild(clone);
 
-
-
-
-
 }
 
 
