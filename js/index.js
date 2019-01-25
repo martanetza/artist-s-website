@@ -15,16 +15,36 @@ const filterID = params.get("filterid");
 fetch(PaintingCatLink).then(promise => promise.json()).then(data => buildPaintingCategories(data));
 
 function buildPaintingCategories(data) {
-    data.forEach(category => {
+       let alljson =[]
+         data.forEach(elm => alljson.push(elm))
+
+
+
+        function my() {
+            alljson.sort(function (a, b) {
+                return a.description - b.description
+
+            });
+
+            console.log(alljson)
+
+        }
+        my();
+
+
+    alljson.forEach(category => {
         const newLink = document.createElement("a");
         const newName = document.createElement("h2");
         newLink.textContent = category.name;
         menu1.appendChild(newLink);
         newLink.href = "painting.html?filterid=" + category.id;
 
+        console.log(category.description)
+
+
+
     });
 }
-
 //creating submenu for photography
 
 
@@ -40,6 +60,11 @@ function buildPhotoCategories(data) {
         menu2.appendChild(newLink);
 
     });
+
+
+
+
+
 
 }
 
