@@ -285,7 +285,7 @@ img {
         color: #616161;
         left: 0vh;
         bottom: 0vh;
-        background-color: rgb(255, 255, 255, 0.7);
+        background-color: rgb(255, 255, 255, 0.9);
         width: 100vw;;
         height: 100vh;
         z-index: 5;
@@ -301,14 +301,14 @@ img {
 
 .boxUp img {
         width: auto;
-        height: 700px;
+        height: 50vh;
         display: block;
-        margin: 500px auto;
+        margin: 50px auto;
 }
 
 .back {
-    margin-right: 5vw;
-    margin-top: 5vh;
+    margin-right: 25vw;
+    margin-top: 25vh;
     font-size: 70px;
     text-align: right;
 }
@@ -822,7 +822,7 @@ main{
         color: #616161;
         left: 0vh;
         bottom: 0vh;
-        background-color: rgb(255, 255, 255, 0.7);
+        background-color: rgb(255, 255, 255, 0.9);
         width: 100vw;;
         height: 100vh;
         z-index: 5;
@@ -844,7 +844,7 @@ main{
 
 
 .back {
-    margin-right: 5vw;
+    margin-right: 25vw;
     margin-top: 5vh;
     font-size: 30px;
     text-align: right;
