@@ -59,16 +59,18 @@ main p {
 }
 
 header img {
-    max-width: 150px;
+    height: 50px;
     display: block;
-    margin-top: 4vh;
+    margin-bottom: 0px;
+    margin-top: auto;
     margin-right: 0vw;
     margin-left: auto;
 }
 
 header {
-    width: 80vw;
-    margin: 0px auto;
+    width: 80%;
+    height: auto;
+    margin: 5vh auto 0 auto;
     display: grid;
     grid-template-columns: auto auto;
     grid-template-areas: "area1 area2" "area3 area3"
@@ -76,10 +78,14 @@ header {
 
 header h1 {
     grid-area: area1;
+    margin: 0px;
+
 }
 
 header .burgerIcon {
     grid-area: area2;
+    display: flex;
+    align-self: center;
 
 }
 
@@ -114,16 +120,16 @@ header .navigation {
 
 .sub_menu_1 a,
 .sub_menu_2 a {
-    font-size: 25px;
+    font-size: 20px;
     display: block;
     margin: 30px 30px;
     text-transform: uppercase;
-}
+  }
 
 /*--------------footer--------------------*/
 
 footer img {
-    max-width: 200px;
+    height: 3vh;
     display: inline;
     padding: 30px 40px;
 
@@ -301,6 +307,7 @@ img {
 
 .boxUp img {
         width: auto;
+        max-width: 80vh;
         height: 50vh;
         display: block;
         margin: 50px auto;
@@ -492,7 +499,7 @@ main{
     header img {
         max-width: 150px;
         display: block;
-        margin-top: 4vh;
+        margin-bottom: 0px;
         margin-right: 5vw;
         margin-left: auto;
     }
@@ -513,6 +520,7 @@ main{
 
     header .burgerIcon {
         grid-area: area2;
+        display: none;
 
     }
 
