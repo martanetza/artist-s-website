@@ -63,12 +63,12 @@ header img {
     display: block;
     margin-bottom: 0px;
     margin-top: auto;
-    margin-right: 0vw;
+    margin-right: 0px;
     margin-left: auto;
 }
 
 header {
-    width: 80%;
+    width: 80vw;
     height: auto;
     margin: 5vh auto 0 auto;
     display: grid;
@@ -171,16 +171,16 @@ img {
 .box1 {
     position: absolute;
     z-index: 2;
-    width: 45vw;
+    width: 40vw;
     animation-name: move;
     animation-duration: 4s;
     animation-fill-mode: forwards;
-    margin-left: 5vw;
+    margin-left: 10vw;
 }
 
 @keyframes move {
     from {
-        margin-left: 5vw;
+        margin-left: 10vw;
     }
     to {
         margin-left: 50vw;
@@ -190,8 +190,8 @@ img {
 .box2 {
     position: absolute;
     z-index: 1;
-    width: 45vw;
-    margin-left: 50vw;
+    width: 40vw;
+    margin-left: 60vw;
     animation-name: move2;
     animation-duration: 4s;
     animation-fill-mode: forwards;
@@ -200,18 +200,18 @@ img {
 
 @keyframes move2 {
     from {
-        margin-left: 50vw;
+        margin-left: 60vw;
     }
     to {
-        margin-left: 5vw;
+        margin-left: 10vw;
     }
 }
 
 .box3 {
     position: absolute;
     z-index: 3;
-    width: 45vw;
-    margin-left: 5vw;
+    width: 40vw;
+    margin-left: 10vw;
     animation-name: opacity;
     animation-delay: 4s;
     animation-duration: 4s;
