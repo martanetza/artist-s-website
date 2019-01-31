@@ -162,12 +162,20 @@ if(showSlide1 && showSlide2){
             }
 
 function slidesRunner(){
+    var smallSlides = document.getElementsByClassName("smallSlides");
+    if (window.innerWidth>991){
     timeoutObj = setTimeout(slidesRunner, 3000);
 
     showSlides(slideIndex);
      slideIndex++;
-}
 
+    }
+    else {
+        for (i = 0; i < smallSlides.length; i++) {
+        smallSlides[i].style.display = "inline-block";
+        }
+    }
+}
 
 /*Next/previous controls
 function plusSlides(n) {

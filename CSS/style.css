@@ -444,26 +444,39 @@ grid-area: smallImgs;
 
 /*----------content subpage about-----------*/
 
-.aboutContent img {
-    display: block;
-    width: 50vw;
-    margin: 80px auto;
-}
+
 .aboutContent{
     width: 80vw;
     margin: 10px auto 100px auto;;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
     "area1"
     "area2"
+    "areaLine"
     "area3"
-    "area4";
+    "area4"
+    "areaSignature";
 }
+
+.aboutContent img {
+    display: block;
+    width: 100%;
+    margin: 0px;
+}
+
+.aboutContent h3{
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 0px;
+    line-height: 80%;
+    font-size: 20px;
+    text-transform: uppercase;
+    }
 
 .textAbout{
     grid-area: area1;
+    margin-top: 30px;
 }
 
 .videoAbout{
@@ -479,13 +492,27 @@ grid-area: smallImgs;
     }
 
 .line{
+    grid-area: areaLine;
+    }
+
+
+.signature{
+    grid-area: areaSignature;
+    }
+
+.signature p{
+     text-align: right;
+    }
+
+
+.line{
        border-bottom: 1px solid #808080;
-       width: 30%;
-       margin: 50px auto;
+       width: 40%;
+       margin: 70px auto 50px auto;
     }
 
 video{
-    width: 90%;
+    width: 100%;
     height: auto;
 }
 
@@ -493,6 +520,114 @@ video{
     text-align: justify;
 }
 
+/*----------content subpage contact-----------*/
+
+.contactContent{
+    display: grid;
+    width: 80vw;
+    margin: 40px auto
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 6;
+    grid-template-areas:
+    "area1 area1"
+    "area2 area7"
+    "area3 area7"
+    "area4 area7"
+    "area5 area5"
+    "area6 area6"
+    }
+
+.contactText{
+    grid-area: area1;
+    }
+
+.contactTelephone{
+    grid-area: area2;
+    }
+
+.contactEmail{
+    grid-area: area3;
+    }
+
+.contactAddress{
+    grid-area: area4;
+    }
+
+.lineContact{
+    grid-area: area5;
+    }
+
+.partners{
+    grid-area: area6;
+    }
+
+.contactPhoto{
+    grid-area: area7;
+    }
+.contactText{
+    margin-bottom: 30px;
+    }
+
+.partners{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+    width: 70vw;
+}
+
+.avatar{
+    width: 55%;
+    /*margin-left: 50%;
+    transform: translate(-50%);*/
+    }
+
+.partners p{
+    text-align: left;
+    line-height: 100%;
+    margin-bottom: 8px;
+    font-size: 90%;
+    }
+
+.collaboration{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    margin-top: 100px;
+    }
+
+.collaboration h5{
+    font-size: 95%;
+    margin-bottom: 15px;
+}
+
+.icon{
+    float: left;
+    width: 30px;
+    height: auto;
+    margin-top: 13px;
+    }
+
+.contactTelephone p, .contactAddress p{
+    line-height: 100%;
+    margin: 8px 0px 8px 45px;
+    text-align: left;
+    }
+
+.contactEmail p{
+    margin: 15px 0px 15px 45px;
+    }
+
+.contactPhoto img{
+    float: right;
+    width: 28vw;
+    height: auto;
+    margin-top: 8px;
+    }
+
+.lineContact{
+       border-bottom: 2px solid #872936;
+       width: 45%;
+       margin: 45px auto 0px auto;
+    }
 
 /*--------------------------------------desktop------------------------------------------------------*/
 
@@ -997,7 +1132,7 @@ video{
 .line{
        border-bottom: 2px solid #808080;
        width: 30%;
-       margin: 10px 0px 30px 0.25frpx;
+       margin: 10px 0px 40px 0.25frpx;
     }
 
 /*------------photo detail page content-----------*/
@@ -1084,6 +1219,123 @@ img.next{
     margin-left: 490px;
     position: absolute;
 }
+
+
+/*----------content subpage contact-----------*/
+
+.contactContent{
+    display: grid;
+    width: 80vw;
+    margin: 40px auto
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+    "area1 area7"
+    "area2 area7"
+    "area3 area7"
+    "area4 area7"
+    "area5 area8"
+    "area6 area8"
+    }
+
+.contactText{
+    grid-area: area1;
+    }
+
+.contactTelephone{
+    grid-area: area2;
+    }
+
+.contactEmail{
+    grid-area: area3;
+    }
+
+.contactAddress{
+    grid-area: area4;
+    }
+
+.lineContact{
+    grid-area: area5;
+    }
+
+.partners{
+    grid-area: area6;
+    }
+
+.contactPhoto{
+    grid-area: area7;
+    }
+
+.partners{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, auto);
+    width: 30vw;
+    }
+
+.collaboration{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    margin-top: 100px;
+    }
+
+.contactText{
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    }
+
+.contactPhoto{
+    margin-left: 200px;
+    }
+
+.icon{
+    float: left;
+    }
+
+.avatar{
+    width: 40%;
+   /* margin-left: 50%;
+    transform: translate(-50%);*/
+    margin-left: 0px;
+    float:left;
+    }
+
+.partners p{
+    text-align: left;
+    line-height: 100%;
+    margin-bottom: 8px;
+    font-size: 15px;
+    }
+
+.contactTelephone p, .contactAddress p{
+    line-height: 100%;
+    margin: 8px 0px 8px 60px;
+    }
+
+.contactEmail p{
+    margin: 15px 0px 15px 60px;
+    }
+
+.contactText p{
+margin-bottom: 0px;
+padding-bottom: 00px;
+    }
+
+.contactPhoto img{
+    float: left;
+    width: auto;
+    height: 50vh;
+    margin-top: 70px;
+    }
+
+.lineContact{
+       border-top: 1px solid #872936;
+       border-bottom: 0px;
+       width: 13%;
+       margin: 0px auto 0px 60px;
+    }
+
+
 
 
 /*Scrollbar style. Credits: https://css-tricks.com/the-current-state-of-styling-scrollbars/*/
