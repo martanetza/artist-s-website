@@ -250,7 +250,8 @@ img {
     grid-area: area3;
 }
 
-  .pageTitle h2{
+
+.pageTitle h2, .pageTitle2 h2{
         text-transform: uppercase;
         font-weight: 200;
     }
@@ -385,8 +386,12 @@ img {
 }
 
 /*----------content subpage photostories-----------*/
+.photoDetailsContent{
+    width: 80vw;
+    margin: 40px auto;
+    }
 
-#photoGrid{
+.photoGrid{
     display: grid;
     grid-template-columns: 1;
     grid-template-rows:  auto auto;
@@ -415,7 +420,7 @@ img {
 }
 
 .smallSlideUnderlined{
-    margin: 10px;
+    /*margin: 10px;*/
 }
 
 
@@ -466,12 +471,13 @@ grid-area: smallImgs;
     margin: 0px;
 }
 
-.aboutContent h3{
+.aboutContent h2{
     margin: 0px 0px 20px 0px;
     padding: 0px 0px 0px 0px;
     line-height: 80%;
-    font-size: 20px;
+    /*font-size: 20px;*/
     text-transform: uppercase;
+    font-weight: 200;
     }
 
 .textAbout{
@@ -522,20 +528,29 @@ video{
 
 /*----------content subpage contact-----------*/
 
-.contactContent{
-    display: grid;
-    width: 80vw;
-    margin: 40px auto
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 6;
-    grid-template-areas:
-    "area1 area1"
-    "area2 area7"
-    "area3 area7"
-    "area4 area7"
-    "area5 area5"
-    "area6 area6"
+.contactMainContent{
+        width: 80vw;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "area0 area0"
+        "area1 area1"
+        "area2 area7"
+        "area3 area7"
+        "area4 area7"
+        "area5 area5"
+        "area6 area6"
     }
+.pageTitle2{
+    text-transform: uppercase;
+    font-weight: 200
+    }
+
+.pageTitle2{
+    grid-area: area0;
+}
 
 .contactText{
     grid-area: area1;
@@ -563,7 +578,9 @@ video{
 
 .contactPhoto{
     grid-area: area7;
+
     }
+
 .contactText{
     margin-bottom: 30px;
     }
@@ -594,9 +611,9 @@ video{
     margin-top: 100px;
     }
 
-.collaboration h5{
-    font-size: 95%;
-    margin-bottom: 15px;
+.collaboration h4{
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .icon{
@@ -1200,12 +1217,13 @@ video{
     }
 
 .smallSlides{
-    display: inline;
+    /*display: inline;
     margin-right: 1.5vw;
     margin-left: 0px;
     width: 14.625%;
     height: auto;
-    float: left;
+    float: left;*/
+    width: 90%; /*Chciałabym mieć zamiast tego grid-gap*/
 }
 
 .smallSlideUnderlined{
@@ -1217,7 +1235,7 @@ video{
 }
 
 
-#photoGrid{
+.photoGrid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2;
@@ -1250,7 +1268,9 @@ video{
 
 .smallImagesBox{
 grid-area: smallImgs;
-justify-items: stretch;
+display: flex;
+justify-content: space-between;
+column-gap: 20px; /*column-gap nie działa*/
 }
 
 #photoParagraph{
@@ -1273,19 +1293,28 @@ img.next{
 
 /*----------content subpage contact-----------*/
 
-.contactContent{
-    display: grid;
-    width: 80vw;
-    margin: 40px auto
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas:
-    "area1 area7"
-    "area2 area7"
-    "area3 area7"
-    "area4 area7"
-    "area5 area8"
-    "area6 area8"
+.contactMainContent{
+        width: 80vw;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "area0 area0"
+        "area1 area7"
+        "area2 area7"
+        "area3 area7"
+        "area4 area7"
+        "area5 area8"
+        "area6 area8"
+    }
+
+.contactMainContent h2{
+    font-weight: 400;
+    }
+
+.pageTitle2{
+    grid-area: area0;
     }
 
 .contactText{
@@ -1336,6 +1365,7 @@ img.next{
 
 .contactPhoto{
     margin-left: 200px;
+    display: block;
     }
 
 .icon{
@@ -1375,7 +1405,7 @@ padding-bottom: 00px;
     float: left;
     width: auto;
     height: 50vh;
-    margin-top: 70px;
+    margin-top: 0px;
     }
 
 .lineContact{
