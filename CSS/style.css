@@ -250,7 +250,8 @@ img {
     grid-area: area3;
 }
 
-  .pageTitle h2{
+
+.pageTitle h2, .pageTitle2 h2{
         text-transform: uppercase;
         font-weight: 200;
     }
@@ -385,8 +386,12 @@ img {
 }
 
 /*----------content subpage photostories-----------*/
+.photoDetailsContent{
+    width: 80vw;
+    margin: 40px auto;
+    }
 
-#photoGrid{
+.photoGrid{
     display: grid;
     grid-template-columns: 1;
     grid-template-rows:  auto auto;
@@ -415,7 +420,7 @@ img {
 }
 
 .smallSlideUnderlined{
-    margin: 10px;
+    /*margin: 10px;*/
 }
 
 
@@ -434,7 +439,7 @@ grid-area: smallImgs;
 /*.mySlides{
     z-index: 2;*/
 
-}
+
 
 /*.mySlides img{
         width: 600px;
@@ -447,41 +452,49 @@ grid-area: smallImgs;
 
 .aboutContent{
     width: 80vw;
-    margin: 10px auto 100px auto;;
+    /*margin: 10px auto 100px auto;*/
+    margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: repeat(8, auto);
     grid-template-areas:
+    "area0"
     "area1"
     "area2"
     "areaLine"
+    "cvTitle"
     "area3"
     "area4"
     "areaSignature";
 }
 
+
 .aboutContent img {
     display: block;
     width: 100%;
+    height: auto;
     margin: 0px;
 }
 
-.aboutContent h3{
-    margin: 0px 0px 20px 0px;
-    padding: 0px 0px 0px 0px;
-    line-height: 80%;
-    font-size: 20px;
-    text-transform: uppercase;
-    }
+.area0-ab{
+    grid-area: area0;
+}
 
 .textAbout{
     grid-area: area1;
-    margin-top: 30px;
 }
 
 .videoAbout{
     grid-area: area2;
     }
+
+.line{
+    grid-area: areaLine;
+    }
+
+.cvTitle{
+    grid-area: cvTitle;
+}
 
 .cvAbout{
     grid-area: area3;
@@ -490,11 +503,6 @@ grid-area: smallImgs;
 .photoAbout{
     grid-area: area4;
     }
-
-.line{
-    grid-area: areaLine;
-    }
-
 
 .signature{
     grid-area: areaSignature;
@@ -508,7 +516,7 @@ grid-area: smallImgs;
 .line{
        border-bottom: 1px solid #808080;
        width: 40%;
-       margin: 70px auto 50px auto;
+       margin: 80px auto 30px auto;
     }
 
 video{
@@ -516,26 +524,33 @@ video{
     height: auto;
 }
 
-.aboutP{
-    text-align: justify;
-}
+
 
 /*----------content subpage contact-----------*/
 
-.contactContent{
-    display: grid;
-    width: 80vw;
-    margin: 40px auto
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 6;
-    grid-template-areas:
-    "area1 area1"
-    "area2 area7"
-    "area3 area7"
-    "area4 area7"
-    "area5 area5"
-    "area6 area6"
+.contactMainContent{
+        width: 80vw;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "area0 area0"
+        "area1 area1"
+        "area2 area7"
+        "area3 area7"
+        "area4 area7"
+        "area5 area5"
+        "area6 area6";
     }
+.pageTitle2{
+    text-transform: uppercase;
+    font-weight: 200
+    }
+
+.area0-c{
+    grid-area: area0;
+}
 
 .contactText{
     grid-area: area1;
@@ -563,7 +578,9 @@ video{
 
 .contactPhoto{
     grid-area: area7;
+
     }
+
 .contactText{
     margin-bottom: 30px;
     }
@@ -594,9 +611,9 @@ video{
     margin-top: 100px;
     }
 
-.collaboration h5{
-    font-size: 95%;
-    margin-bottom: 15px;
+.collaboration h4{
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .icon{
@@ -633,7 +650,20 @@ video{
 
 /*----------content subpage Vejlands Atelier-----------*/
 
-.atelierDiv{
+.atelierMain{
+    width: 80vw;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "area0"
+    "area1"
+    "area2"
+    "area3";
+    }
+
+/*.atelierDiv{
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: auto auto auto;
@@ -641,8 +671,13 @@ video{
     "area1"
     "area2"
     "area3"
-    }
-.atelierDiv img{
+    }*/
+
+.area0-VL{
+    grid-area: area0;
+}
+
+.atelierMain img{
       grid-area: area1;
     }
 
@@ -655,18 +690,13 @@ video{
     grid-area: area3;
     }
 
-.atelierDiv h3{
+.atelierMain  h3{
     margin-bottom: 0px;
     }
 
-.atelierDiv img{
+.atelierMain  img{
     width: 100%;
     height: auto;
-    }
-
-.atelierMain{
-    width: 80vw;
-    margin: 40px auto;
     }
 
 .atelierText{
@@ -674,7 +704,7 @@ video{
     margin-top: 3vh;
     }
 
-.atelierDiv img{
+.atelierMain img{
     margin-bottom: 5px;
     }
 
@@ -1105,21 +1135,21 @@ main{
 
 .aboutContent{
     width: 80vw;
-    margin: 60px auto;
+    margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
+    "area0 area0"
     "area1 area2"
     "areaLine areaEmpty"
+    "areaCvT areaCvT"
     "area3 area4"
     "areaEmpty2 areaSignature";
 }
 
 .aboutContent h3{
-    margin: 0px 0px 20px 0px;
-    padding: 0px 0px 0px 0px;
-    line-height: 80%;
+   line-height: 80%;
     font-size: 20px;
     text-transform: uppercase;
     }
@@ -1136,16 +1166,23 @@ video{
     width: 85%;
     height: auto;
     float: right;
+}
+
+.area0-ab{
+      grid-area: area0;
     }
 
 .textAbout{
     grid-area: area1;
+    margin-top: 0px;
     }
 
 .videoAbout{
     grid-area: area2;
+    }
 
-    padding-top: 40px;
+.cvTitle{
+   grid-area: areaCvT;
     }
 
 .cvAbout{
@@ -1154,8 +1191,6 @@ video{
 
 .photoAbout{
     grid-area: area4;
-
-    padding-top: 40px;
     }
 
 .line{
@@ -1175,14 +1210,13 @@ video{
 .aboutP{
         margin-top: 0px;
         margin-bottom: 0px;
-        text-align: justify;
     }
 
 
 .line{
        border-bottom: 2px solid #808080;
        width: 30%;
-       margin: 10px 0px 40px 0.25frpx;
+       margin: 0px 0px 10px 0.25fr;
     }
 
 /*------------photo detail page content-----------*/
@@ -1200,12 +1234,13 @@ video{
     }
 
 .smallSlides{
-    display: inline;
+    /*display: inline;
     margin-right: 1.5vw;
     margin-left: 0px;
     width: 14.625%;
     height: auto;
-    float: left;
+    float: left;*/
+    width: 90%; /*Chciałabym mieć zamiast tego grid-gap*/
 }
 
 .smallSlideUnderlined{
@@ -1217,7 +1252,7 @@ video{
 }
 
 
-#photoGrid{
+.photoGrid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2;
@@ -1250,7 +1285,9 @@ video{
 
 .smallImagesBox{
 grid-area: smallImgs;
-justify-items: stretch;
+display: flex;
+justify-content: space-between;
+column-gap: 20px; /*column-gap nie działa*/
 }
 
 #photoParagraph{
@@ -1273,19 +1310,28 @@ img.next{
 
 /*----------content subpage contact-----------*/
 
-.contactContent{
-    display: grid;
-    width: 80vw;
-    margin: 40px auto
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas:
-    "area1 area7"
-    "area2 area7"
-    "area3 area7"
-    "area4 area7"
-    "area5 area8"
-    "area6 area8"
+.contactMainContent{
+        width: 80vw;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "area0 area0"
+        "area1 area7"
+        "area2 area7"
+        "area3 area7"
+        "area4 area7"
+        "area5 area8"
+        "area6 area8"
+    }
+
+.contactMainContent h2{
+    font-weight: 400;
+    }
+
+.area0-c{
+    grid-area: area0;
     }
 
 .contactText{
@@ -1336,6 +1382,7 @@ img.next{
 
 .contactPhoto{
     margin-left: 200px;
+    display: block;
     }
 
 .icon{
@@ -1375,7 +1422,7 @@ padding-bottom: 00px;
     float: left;
     width: auto;
     height: 50vh;
-    margin-top: 70px;
+    margin-top: 0px;
     }
 
 .lineContact{
@@ -1388,16 +1435,23 @@ padding-bottom: 00px;
 
 /*----------content subpage Vejlands Atelier-----------*/
 
-.atelierDiv{
+.atelierMain{
+    width: 80vw;
+    margin: 40px auto;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: auto auto;
     grid-template-areas:
+    "area0 area0"
     "area1 area2"
-    "area3 area3"
+    "area3 area3";
     }
 
-.atelierDiv img{
+.area0-VL{
+     grid-area: area0;
+    }
+
+.atelierMain img{
       grid-area: area1;
     }
 
@@ -1409,25 +1463,20 @@ padding-bottom: 00px;
     grid-area: area3;
 }
 
-.atelierDiv h3{
+.atelierMain h3{
     margin-bottom: 0px;
     }
 
-.atelierDiv img{
+.atelierMain img{
     width: 100%;
     height: auto;
-    }
-
-.atelierMain{
-    width: 80vw;
-    margin: 40px auto;
     }
 
 .atelierText{
     margin-left: 50px;
     margin-top:0vh;
     }
-.atelierDiv img{
+.atelierMain img{
     margin-bottom: 5px;
     }
 
