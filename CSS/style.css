@@ -385,28 +385,24 @@ img {
     color: #808080;
 }
 
-/*----------content subpage photostories-----------*/
-.photoDetailsContent{
-    width: 80vw;
-    margin: 40px auto;
-    }
+/*----------photo detail page content-----------*/
 
-.photoGrid{
+#photoGrid{
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: auto;
     grid-template-rows:  auto auto;
     grid-template-areas:
     "text"
     "smallImgs";
-    padding-left: 90px;
-    padding-right: 90px;
+    /*padding-left: 90px;
+    padding-right: 90px;*/
     width: 80vw;
     margin: 40px auto;
 }
 
 #photoText{
     grid-area: text;
-    padding-right: 20px;
+    /*padding-right: 20px;*/
     margin-top: 70px;
     height: 400px;
     overflow: visible;
@@ -415,12 +411,12 @@ img {
 .smallSlides{
     display: block;
     margin: 10px;
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
 .smallSlideUnderlined{
-    /*margin: 10px;*/
+    margin: 10px;
 }
 
 
@@ -1234,13 +1230,12 @@ video{
     }
 
 .smallSlides{
-    /*display: inline;
+    display: inline;
     margin-right: 1.5vw;
     margin-left: 0px;
     width: 14.625%;
     height: auto;
-    float: left;*/
-    width: 90%; /*Chciałabym mieć zamiast tego grid-gap*/
+    float: left;
 }
 
 .smallSlideUnderlined{
@@ -1252,7 +1247,7 @@ video{
 }
 
 
-.photoGrid{
+#photoGrid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 2;
@@ -1285,9 +1280,7 @@ video{
 
 .smallImagesBox{
 grid-area: smallImgs;
-display: flex;
-justify-content: space-between;
-column-gap: 20px; /*column-gap nie działa*/
+justify-items: stretch;
 }
 
 #photoParagraph{
