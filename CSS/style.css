@@ -126,6 +126,10 @@ header .navigation {
     text-transform: uppercase;
   }
 
+.sub_menu_1 a{
+    font-size: 33px;
+}
+
 /*--------------footer--------------------*/
 
 footer img {
@@ -153,13 +157,13 @@ footer {
 
 .animation {
     position: relative;
-    height: 1400px;
+    height: 1200px;
     width: 100vw;
     top: 5vh;
 }
 
 .signature img {
-    margin: 90px 20px 20px auto;
+    margin: 60px 20px 20px auto;
     width: 70vw;
     display: block;
 }
@@ -191,7 +195,7 @@ img {
     position: absolute;
     z-index: 1;
     width: 40vw;
-    margin-left: 60vw;
+    margin-left: 50vw;
     animation-name: move2;
     animation-duration: 4s;
     animation-fill-mode: forwards;
@@ -200,7 +204,7 @@ img {
 
 @keyframes move2 {
     from {
-        margin-left: 60vw;
+        margin-left: 50vw;
     }
     to {
         margin-left: 10vw;
@@ -250,7 +254,8 @@ img {
     grid-area: area3;
 }
 
-  .pageTitle h2{
+
+.pageTitle h2, .pageTitle2 h2{
         text-transform: uppercase;
         font-weight: 200;
     }
@@ -297,32 +302,28 @@ img {
         z-index: 5;
         display: none;
         position: fixed;
+        overflow-y: scroll;
         -webkit-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
         -moz-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
         box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
 
-
-
 }
 
 .boxUp img {
-        width: auto;
-        max-width: 80vh;
-        height: 50vh;
-        display: block;
-        margin: 50px auto;
+        width: 90vw;
+        height: auto;
+        display: flex;
+        margin: auto auto;
 }
 
 .back {
-    margin-right: 25vw;
-    margin-top: 25vh;
-    font-size: 70px;
+    margin-right: 5vw;
+    margin-top: 5vh;
+    font-size: 80px;
     text-align: right;
 }
 
-
-
-    .paintingDetail h3 {
+.paintingDetail h3 {
         width: 100%;
         margin: 10px auto 0px;
         font-weight: 300;
@@ -330,13 +331,6 @@ img {
         text-transform: uppercase;
         text-align: left;
     }
-.boxUp .infoPainting {
-    width: 100%;
-    display: flex;
-    font-size: 20px;
-    margin: 0px auto;
-}
-
 
 
 /*----------content subpage photos-----------*/
@@ -384,33 +378,34 @@ img {
     color: #808080;
 }
 
-/*----------content subpage photostories-----------*/
+/*----------photo detail page content-----------*/
 
 #photoGrid{
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: auto;
     grid-template-rows:  auto auto;
     grid-template-areas:
     "text"
     "smallImgs";
-    padding-left: 90px;
-    padding-right: 90px;
+    /*padding-left: 90px;
+    padding-right: 90px;*/
     width: 80vw;
     margin: 40px auto;
 }
 
 #photoText{
     grid-area: text;
-    padding-right: 20px;
+    /*padding-right: 20px;*/
     margin-top: 70px;
-    height: 400px;
+    height: flex;
     overflow: visible;
+
 }
 
 .smallSlides{
     display: block;
     margin: 10px;
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
@@ -434,7 +429,7 @@ grid-area: smallImgs;
 /*.mySlides{
     z-index: 2;*/
 
-}
+
 
 /*.mySlides img{
         width: 600px;
@@ -447,41 +442,49 @@ grid-area: smallImgs;
 
 .aboutContent{
     width: 80vw;
-    margin: 10px auto 100px auto;;
+    /*margin: 10px auto 100px auto;*/
+    margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: repeat(8, auto);
     grid-template-areas:
+    "area0"
     "area1"
     "area2"
     "areaLine"
+    "cvTitle"
     "area3"
     "area4"
     "areaSignature";
 }
 
+
 .aboutContent img {
     display: block;
     width: 100%;
+    height: auto;
     margin: 0px;
 }
 
-.aboutContent h3{
-    margin: 0px 0px 20px 0px;
-    padding: 0px 0px 0px 0px;
-    line-height: 80%;
-    font-size: 20px;
-    text-transform: uppercase;
-    }
+.area0-ab{
+    grid-area: area0;
+}
 
 .textAbout{
-    grid-area: area1;
-    margin-top: 30px;
+    grid-area: area2;
 }
 
 .videoAbout{
-    grid-area: area2;
+    grid-area: area1;
     }
+
+.line{
+    grid-area: areaLine;
+    }
+
+.cvTitle{
+    grid-area: cvTitle;
+}
 
 .cvAbout{
     grid-area: area3;
@@ -490,11 +493,6 @@ grid-area: smallImgs;
 .photoAbout{
     grid-area: area4;
     }
-
-.line{
-    grid-area: areaLine;
-    }
-
 
 .signature{
     grid-area: areaSignature;
@@ -506,9 +504,9 @@ grid-area: smallImgs;
 
 
 .line{
-       border-bottom: 1px solid #808080;
+       border-bottom: 1px solid #872936;
        width: 40%;
-       margin: 70px auto 50px auto;
+       margin: 80px auto 80px auto;
     }
 
 video{
@@ -516,26 +514,33 @@ video{
     height: auto;
 }
 
-.aboutP{
-    text-align: justify;
-}
+
 
 /*----------content subpage contact-----------*/
 
-.contactContent{
-    display: grid;
-    width: 80vw;
-    margin: 40px auto
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 6;
-    grid-template-areas:
-    "area1 area1"
-    "area2 area7"
-    "area3 area7"
-    "area4 area7"
-    "area5 area5"
-    "area6 area6"
+.contactMainContent{
+        width: 80vw;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "area0 area0"
+        "area1 area1"
+        "area2 area7"
+        "area3 area7"
+        "area4 area7"
+        "area5 area5"
+        "area6 area6";
     }
+.pageTitle2{
+    text-transform: uppercase;
+    font-weight: 200
+    }
+
+.area0-c{
+    grid-area: area0;
+}
 
 .contactText{
     grid-area: area1;
@@ -563,7 +568,9 @@ video{
 
 .contactPhoto{
     grid-area: area7;
+
     }
+
 .contactText{
     margin-bottom: 30px;
     }
@@ -591,12 +598,12 @@ video{
 .collaboration{
     grid-column-start: 1;
     grid-column-end: -1;
-    margin-top: 100px;
+    margin-top: 80px;
     }
 
-.collaboration h5{
-    font-size: 95%;
-    margin-bottom: 15px;
+.collaboration h4{
+    margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .icon{
@@ -608,9 +615,13 @@ video{
 
 .contactTelephone p, .contactAddress p{
     line-height: 100%;
-    margin: 8px 0px 8px 45px;
+    margin: 38px 0px 8px 45px;
     text-align: left;
     }
+
+.contactAddress p:last-of-type{
+    margin: 8px 0px 8px 160px;
+}
 
 .contactEmail p{
     margin: 15px 0px 15px 45px;
@@ -633,7 +644,20 @@ video{
 
 /*----------content subpage Vejlands Atelier-----------*/
 
-.atelierDiv{
+.atelierMain{
+    width: 80vw;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "area0"
+    "area1"
+    "area2"
+    "area3";
+    }
+
+/*.atelierDiv{
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: auto auto auto;
@@ -641,8 +665,13 @@ video{
     "area1"
     "area2"
     "area3"
-    }
-.atelierDiv img{
+    }*/
+
+.area0-VL{
+    grid-area: area0;
+}
+
+.atelierMain img{
       grid-area: area1;
     }
 
@@ -655,18 +684,13 @@ video{
     grid-area: area3;
     }
 
-.atelierDiv h3{
+.atelierMain  h3{
     margin-bottom: 0px;
     }
 
-.atelierDiv img{
+.atelierMain  img{
     width: 100%;
     height: auto;
-    }
-
-.atelierMain{
-    width: 80vw;
-    margin: 40px auto;
     }
 
 .atelierText{
@@ -674,7 +698,7 @@ video{
     margin-top: 3vh;
     }
 
-.atelierDiv img{
+.atelierMain img{
     margin-bottom: 5px;
     }
 
@@ -921,7 +945,7 @@ main{
 
         grid-area: area1;
         position: relative;
-        height: 88vh;
+        height: 60vh;
         width: 30vw;
         top: 0vh;
         /*        display: none*/
@@ -950,7 +974,7 @@ main{
 
     #h2homepage{
         display: block;
-        margin-top: 120px;
+        margin-top: 100px;
         margin-left: 10px;
         text-align: left;
     }
@@ -1038,11 +1062,10 @@ main{
         box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
 
 
-
     }
     .boxUp img {
         width: auto;
-        height: 500px;
+        height: 80vh;
         display: block;
         margin: 0px auto;
     }
@@ -1051,7 +1074,7 @@ main{
 .back {
     margin-right: 25vw;
     margin-top: 5vh;
-    font-size: 30px;
+    font-size: 35px;
     text-align: right;
 }
 
@@ -1105,21 +1128,21 @@ main{
 
 .aboutContent{
     width: 80vw;
-    margin: 60px auto;
+    margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
+    "area0 area0"
     "area1 area2"
     "areaLine areaEmpty"
+    "areaCvT area4"
     "area3 area4"
     "areaEmpty2 areaSignature";
 }
 
 .aboutContent h3{
-    margin: 0px 0px 20px 0px;
-    padding: 0px 0px 0px 0px;
-    line-height: 80%;
+   line-height: 80%;
     font-size: 20px;
     text-transform: uppercase;
     }
@@ -1133,19 +1156,36 @@ main{
 
 
 video{
-    width: 85%;
+    width: 95%;
     height: auto;
-    float: right;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.area0-ab{
+      grid-area: area0;
     }
 
 .textAbout{
-    grid-area: area1;
+    grid-area: area2;
+    margin-top: 0px;
     }
 
 .videoAbout{
-    grid-area: area2;
+    grid-area: area1;
+    }
 
-    padding-top: 40px;
+.videoAbout p{
+    margin-right: 5%;
+    }
+
+.cvTitle{
+   grid-area: areaCvT;
+    }
+
+.cvTitle h2{
+    margin: 2em 0em 0em 0em;
     }
 
 .cvAbout{
@@ -1154,8 +1194,7 @@ video{
 
 .photoAbout{
     grid-area: area4;
-
-    padding-top: 40px;
+    margin-top: 2%;
     }
 
 .line{
@@ -1175,14 +1214,13 @@ video{
 .aboutP{
         margin-top: 0px;
         margin-bottom: 0px;
-        text-align: justify;
     }
 
 
 .line{
-       border-bottom: 2px solid #808080;
+       border-bottom: 2px solid #872936;
        width: 30%;
-       margin: 10px 0px 40px 0.25frpx;
+       margin: 0px 0px 10px 0.25fr;
     }
 
 /*------------photo detail page content-----------*/
@@ -1273,19 +1311,28 @@ img.next{
 
 /*----------content subpage contact-----------*/
 
-.contactContent{
-    display: grid;
-    width: 80vw;
-    margin: 40px auto
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, auto);
-    grid-template-areas:
-    "area1 area7"
-    "area2 area7"
-    "area3 area7"
-    "area4 area7"
-    "area5 area8"
-    "area6 area8"
+.contactMainContent{
+        width: 80vw;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(7, auto);
+        grid-template-areas:
+        "area0 area0"
+        "area1 area7"
+        "area2 area7"
+        "area3 area7"
+        "area4 area7"
+        "area5 area8"
+        "area6 area8"
+    }
+
+.contactMainContent h2{
+    font-weight: 400;
+    }
+
+.area0-c{
+    grid-area: area0;
     }
 
 .contactText{
@@ -1326,7 +1373,7 @@ img.next{
 .collaboration{
     grid-column-start: 1;
     grid-column-end: -1;
-    margin-top: 100px;
+    margin-top: 50px;
     }
 
 .contactText{
@@ -1336,6 +1383,7 @@ img.next{
 
 .contactPhoto{
     margin-left: 200px;
+    display: block;
     }
 
 .icon{
@@ -1362,6 +1410,10 @@ img.next{
     margin: 8px 0px 8px 60px;
     }
 
+.contactAddress p:last-of-type{
+    margin: 8px 0px 8px 120px;
+}
+
 .contactEmail p{
     margin: 15px 0px 15px 60px;
     }
@@ -1375,7 +1427,7 @@ padding-bottom: 00px;
     float: left;
     width: auto;
     height: 50vh;
-    margin-top: 70px;
+    margin-top: 0px;
     }
 
 .lineContact{
@@ -1388,16 +1440,23 @@ padding-bottom: 00px;
 
 /*----------content subpage Vejlands Atelier-----------*/
 
-.atelierDiv{
+.atelierMain{
+    width: 80vw;
+    margin: 40px auto;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: auto auto;
     grid-template-areas:
+    "area0 area0"
     "area1 area2"
-    "area3 area3"
+    "area3 area3";
     }
 
-.atelierDiv img{
+.area0-VL{
+     grid-area: area0;
+    }
+
+.atelierMain img{
       grid-area: area1;
     }
 
@@ -1409,26 +1468,21 @@ padding-bottom: 00px;
     grid-area: area3;
 }
 
-.atelierDiv h3{
+.atelierMain h3{
     margin-bottom: 0px;
     }
 
-.atelierDiv img{
+.atelierMain img{
     width: 100%;
     height: auto;
-    }
-
-.atelierMain{
-    width: 80vw;
-    margin: 40px auto;
     }
 
 .atelierText{
     margin-left: 50px;
     margin-top:0vh;
     }
-.atelierDiv img{
-    margin-bottom: 5px;
+.atelierMain img{
+    margin: 20% 0px;
     }
 
 
