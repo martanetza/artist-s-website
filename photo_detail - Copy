@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Maciej Dyczkowski</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Maciej Dyczkowski</h1>
+        <div class="burgerIcon">
+            <img src="img/burger%20icon.png" alt="burger_menu">
+        </div>
+        <!--        <div class="SoMeIcons"></div>-->
+        <div class="navigation">
+            <div class="menu0">
+                <a href="index.html">
+                    <h2>home</h2>
+                </a>
+            </div>
+            <div class="menu1">
+                <h2>painting</h2>
+                <div class="sub_menu_1"></div>
+            </div>
+            <div class="menu2">
+                <h2>photography</h2>
+                <div class="sub_menu_2"></div>
+            </div>
+            <div class="menu3"></div>
+            <div class="menu4">
+                <h2>vejlandstudio</h2>
+            </div>
+            <div class="menu5">
+                <a href="about.html">
+                    <h2>about</h2>
+                </a>
+            </div>
+            <div class="menu6">
+                <h2>contact</h2>
+            </div>
+        </div>
+        <div class="SoMeLinks">
+            <img src="img/linkedin.png" alt="in_icon">
+            <img src="img/instagram.png" alt="insta_icon">
+            <img src="img/facebook.png" alt="fb_icon">
+
+
+        </div>
+    </header>
+    <main>
+
+        <!--
+            <template class="photoDetailsTemplate">
+            <article class="photo">
+
+            <img src="" alt="">
+
+
+            </article>
+                </template>
+
+-->
+
+        <section id="photoStories" class="photostories">
+            <div id="photoGrid">
+                <div id=photoText>
+                    <h1>PHOTO STORIES</h1>
+                    <p id=photoParagraph></p>
+                </div>
+                <div id=photoWindow>
+                        <a onclick="plusSlides(-1)"><img src="images/arrow-leftSM.png" alt="left" class="prev"></a>
+                    <a onclick="plusSlides(1)"><img src="images/arrow-rightSM.png" alt="right" class="next"></a>
+<!--                    <div class = "mySlidesPrint"></div>-->
+
+
+                </div>
+                <div class=smallImagesBox>
+
+                </div>
+            </div>
+        </section>
+
+       <template class="photoDetailsTemplate">
+            <div class="mySlides"><img src="" alt="img"></div>
+        </template>
+        <template class="photoDetailsTemplate2">
+            <div class=sImgInline><a onclick="showSlide(1)"><img src="" alt="img" class="smallSlides"></a></div>
+         </template>
+
+
+
+    </main>
+
+    <footer>
+        <img src="img/facebook.png" alt="fb_icon">
+        <img src="img/instagram.png" alt="insta_icon">
+        <img src="img/linkedin.png" alt="in_icon">
+    </footer>
+
+    <script src="js/details.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ var slideIndex = 1;
     URLSearchParams(window.location.search);
     const filterPhotoID = params2.get("phototid");
 
-    fetch(baseLink2 + filterPhotoID + "?_embed").then(promise => promise.json()).then(data => showDetailsPhoto(data));
+    fetch(baseLink2 + filterPhotoID + "?per_page=100&_embed").then(promise => promise.json()).then(data => showDetailsPhoto(data));
 
 //console.log(filterPhotoID)
 
@@ -32,7 +32,7 @@ function showDetailsPhoto(Data) {
 
         console.log(photo.content)
         if(photo.content.rendered){
-           document.querySelector("#photoParagraph").innerHTML = photo.content.rendered
+           document.querySelector("#photoText").innerHTML = photo.content.rendered
         }
 
 
