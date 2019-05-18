@@ -17,7 +17,7 @@ fetch(PaintingCatLink + "/" + filterID).then(e => e.json()).then(showTitle);
     }
 
 function loadContByCategory(filterID) {
-    fetch(baseLink + "painting?per_page=100&paintings=" + filterID + "&_embed").then(e => e.json()).then(showDataByCategory);
+    fetch(baseLink + "painting?paintings=" + filterID + "&_embed").then(e => e.json()).then(showDataByCategory);
     console.log(filterID)
 
 }
@@ -77,16 +77,11 @@ if (filterID == 11) {
 function showDetails(painting) {
 
     console.log(painting)
-    const boxUp= document.querySelector(".boxUp");
-    boxUp.style.display="block";
-    boxUp.querySelector("img").src = painting.acf.image_large.url;
-    boxUp.querySelector(".back a").href = "painting.html?filterid=" + painting.paintings[0];
-    boxUp.querySelector("a").addEventListener("click", e=>{
-        e.preventDefault()
-        document.querySelector(".boxUp").style.display="none";
-    })
-    //document.querySelector(".boxUp").appendChild(clone);
-
+    document.querySelector(".boxUp").style.display="block";
+    const clone = templateDetail.cloneNode(true).content;
+    clone.querySelector("img").src = painting.acf.image_large.url;
+    clone.querySelector(".back a").href = "painting.html?filterid=" + painting.paintings[0];
+    document.querySelector(".boxUp").appendChild(clone);
 
 }
 

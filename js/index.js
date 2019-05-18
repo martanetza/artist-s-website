@@ -77,10 +77,10 @@ console.log(MenuOpen)
 document.querySelector(".burgerIcon").addEventListener("click", () => {
 
 if(!MenuOpen){
-    document.querySelector(".navigation").style.display="block"
+    document.querySelector("nav").style.display="block"
     MenuOpen = true
    }else{
-  document.querySelector(".navigation").style.display="none"
+  document.querySelector("nav").style.display="none"
     MenuOpen = false
    }
 
