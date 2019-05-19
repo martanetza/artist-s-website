@@ -120,15 +120,11 @@ header .navigation {
 
 .sub_menu_1 a,
 .sub_menu_2 a {
-    font-size: 20px;
-    display: block;
+    font-size: 31px;
+    display: flex;
     margin: 30px 30px;
     text-transform: uppercase;
   }
-
-.sub_menu_1 a{
-    font-size: 33px;
-}
 
 /*--------------footer--------------------*/
 
