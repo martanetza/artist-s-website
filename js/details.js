@@ -200,7 +200,18 @@ function thumbnailsNext(n) {
 function thumbnailsPrev(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
-    //slideIndex = 1; ??????????????
+    slideIndex = 1;
+    /*  If statement, żeby strzałka prev cofała z ostatniego do pierwszego
+   if (smallSlides.length > 6 && smallSlides.length < 13) {
+      slideIndex = 7;
+    } else if (smallSlides.length > 12 && smallSlides.length < 19) {
+      slideIndex = 13;
+    } else if (smallSlides.length > 18 && smallSlides.length < 25) {
+      slideIndex = 19;
+    } else if (smallSlides.length > 24 && smallSlides.length < 31) {
+      slideIndex = 25;
+    } */
+    //powyżej if statement zagnieżdżone w if statement
   } else if (slideIndex > 6 && slideIndex < 13) {
     slideIndex = 1;
   } else if (slideIndex > 12 && slideIndex < 19) {
@@ -220,14 +231,14 @@ function thumbnailsPrev(n) {
 function moveThumbnails(n) {
   let i;
 
-  //If n is bigger then the number of slides in an array take into account the first slide
+  //If n is bigger then the number of slides in an array stop at current
   if (n > bigSlides.length) {
-    slideIndex = 1;
+    slideIndex = n - 6;
   }
 
-  //If n is smaller than one, take into account the last slide
+  //If n is smaller than one stop at current
   if (n < 1) {
-    slideIndex = bigSlides.length;
+    slideIndex = 1;
   }
 
   //apply "display none" to all slides (big and small)
@@ -281,5 +292,3 @@ function moveThumbnails(n) {
     smallSlides[slideIndex + 4].style.display = "inline";
   }
 }
-
-console.log(slideIndex);
