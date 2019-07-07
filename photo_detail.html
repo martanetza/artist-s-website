@@ -65,21 +65,41 @@
         /></a>
       </div>
     </header>
-    <main>
-      <section id="photoStories" class="photostories">
-        <div id="photoGrid">
-          <div id="photoText">
-            <!--<h1>PHOTO STORIES</h1>-->
-          </div>
-          <div id="photoWindow">
-            <!--<a onclick="plusSlides(-1)"><img src="img/arrow-leftSM.png" alt="left" class="prev"></a>
+
+    <main id="photoGrid">
+      <!--<section id="photoStories" class="photostories">-->
+      <!--<div id="photoGrid">-->
+      <div id="photoText">
+        <!--<h1>PHOTO STORIES</h1>-->
+      </div>
+      <div id="photoWindow">
+        <!--<a onclick="plusSlides(-1)"><img src="img/arrow-leftSM.png" alt="left" class="prev"></a>
                     <a onclick="plusSlides(1)"><img src="img/arrow-rightSM.png" alt="right" class="next"></a>-->
-          </div>
-          <div class="smallImagesBox"></div>
-          <button id="next6" onclick="thumbnailsNext(slideIndex)">Next6</button>
-          <button id="prev6" onclick="thumbnailsPrev(slideIndex)">Prev6</button>
+      </div>
+      <div id="smallImagesContainer">
+        <div id="prev6" onclick="thumbnailsPrev(slideIndex)">
+          <img
+            src="img/arrow-left.png"
+            alt="img"
+            class="thumbnailsArrows"
+            id="arrow-left"
+          />
         </div>
-      </section>
+
+        <div id="smallImagesBoxContainer">
+          <div class="smallImagesBox"></div>
+        </div>
+        <div id="next6" onclick="thumbnailsNext(slideIndex)">
+          <img
+            src="img/arrow-right.png"
+            alt="img"
+            class="thumbnailsArrows"
+            id="arrow-right"
+          />
+        </div>
+      </div>
+      <!--</div>
+      </section>-->
 
       <template class="photoDetailsTemplate">
         <div class="mySlides"><img src="" alt="img" /></div>

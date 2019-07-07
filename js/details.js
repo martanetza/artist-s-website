@@ -4,6 +4,7 @@ let TemplPhotoDetails = document.querySelector(".photoDetailsTemplate");
 let TemplPhotoDetails2 = document.querySelector(".photoDetailsTemplate2");
 let bigSlides = document.getElementsByClassName("mySlides"); //array
 let smallSlides = document.getElementsByClassName("smallSlides");
+const arrowLeft = document.querySelector("#arrow-left");
 
 let showSlide1 = false;
 let showSlide2 = false;
@@ -201,6 +202,7 @@ function thumbnailsPrev(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
     slideIndex = 1;
+    arrowLeft.classList.add("thumbnailsArrowDeactivated");
     /*  If statement, żeby strzałka prev cofała z ostatniego do pierwszego
    if (smallSlides.length > 6 && smallSlides.length < 13) {
       slideIndex = 7;
