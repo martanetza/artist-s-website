@@ -165,7 +165,7 @@ footer {
     top: 5vh;
 }
 
-.signature img {
+.signature svg {
     margin: 60px 20px 20px auto;
     width: 65vw;
     display: block;
@@ -991,7 +991,7 @@ main{
         grid-area: area3;
 
     }
-    .signature img {
+    .signature svg {
         width: 20vw;
         margin-right: 0px;
         margin-top: 10px;
@@ -1695,7 +1695,7 @@ padding-bottom: 00px;
   }
 
   .draw {
-    animation: draw 0.3s ease-in forwards;
+    animation: draw 0.16s ease-in forwards;
   }
 
   @keyframes draw {
