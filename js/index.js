@@ -76,7 +76,7 @@ function loadSVG2() {
       document
         .querySelector(".signature")
         .insertAdjacentHTML("afterbegin", svgdata);
-      drawPath();
+      setTimeout(drawPath, 3000);
     });
 }
 
