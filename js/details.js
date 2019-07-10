@@ -5,6 +5,9 @@ let TemplPhotoDetails2 = document.querySelector(".photoDetailsTemplate2");
 let bigSlides = document.getElementsByClassName("mySlides"); //array
 let smallSlides = document.getElementsByClassName("smallSlides");
 const arrowLeft = document.querySelector("#arrow-left");
+const arrowRight = document.querySelector("#arrow-right");
+const arrowLeftWrapper = document.querySelector("#prev6");
+const arrowRightWrapper = document.querySelector("#next6");
 
 let showSlide1 = false;
 let showSlide2 = false;
@@ -17,8 +20,6 @@ const filterPhotoID = params2.get("phototid");
 fetch(baseLink2 + filterPhotoID + "?per_page=100&_embed")
   .then(promise => promise.json())
   .then(data => showDetailsPhoto(data));
-
-//console.log(filterPhotoID)
 
 function showDetailsPhoto(Data) {
   Data.forEach(showDetailsPhotoOne);
@@ -37,13 +38,12 @@ function showDetailsPhoto(Data) {
 
   /*Text of the paragraph*/
   function showDetailsPhotoOne(photo) {
-    console.log(photo.content);
     if (photo.content.rendered) {
       document.querySelector("#photoText").innerHTML = photo.content.rendered;
     }
 
     const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
-    //console.log(photo.id)
+
     if (photo._embedded) {
       copyPhoto.querySelector("img").src =
         photo._embedded[
@@ -79,7 +79,6 @@ function showDetailsPhoto(Data) {
 }
 
 /*Function showSlides is inspired with the code of an automatic slideshow from W3Schools: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto */
-
 function showSlides(n) {
   let i;
 
@@ -91,6 +90,18 @@ function showSlides(n) {
   //If n is smaller than one, take into account the last slide
   if (n < 1) {
     slideIndex = bigSlides.length;
+  }
+
+  if (slideIndex > 0 && slideIndex < 5) {
+    arrowLeft.classList.add("thumbnailsArrowDeactivated");
+    arrowLeftWrapper.onclick = "";
+  }
+
+  if (slideIndex > 4) {
+    arrowLeft.classList.remove("thumbnailsArrowDeactivated");
+    arrowLeftWrapper.onclick = function() {
+      thumbnailsPrev(slideIndex);
+    };
   }
 
   //apply "display none" to all slides (big and small)
@@ -153,6 +164,25 @@ function showSlides(n) {
       smallSlides[5].style.display = "inline";
     }
   }
+
+  hiddenImage = false;
+  for (h = slideIndex; h < smallSlides.length; h++) {
+    if (smallSlides[h].style.display == "none") {
+      hiddenImage = true;
+    }
+  }
+
+  if (hiddenImage === false) {
+    //console.log("hide");
+    arrowRight.classList.add("thumbnailsArrowDeactivated");
+    arrowRightWrapper.onclick = "";
+  } else {
+    //console.log("show");
+    arrowRight.classList.remove("thumbnailsArrowDeactivated");
+    arrowRightWrapper.onclick = function() {
+      thumbnailsNext(slideIndex);
+    };
+  }
 }
 
 function slidesRunner() {
@@ -166,6 +196,16 @@ function slidesRunner() {
     for (i = 0; i < smallSlides.length; i++) {
       smallSlides[i].style.display = "inline-block";
     }
+  }
+
+  if (smallSlides.length < 6) {
+    arrowRight.classList.add("thumbnailsArrowDeactivated");
+    arrowRightWrapper.onclick = "";
+  } else {
+    arrowRight.classList.remove("thumbnailsArrowDeactivated");
+    arrowRightWrapper.onclick = function() {
+      thumbnailsNext(slideIndex);
+    };
   }
 }
 
@@ -202,7 +242,6 @@ function thumbnailsPrev(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
     slideIndex = 1;
-    arrowLeft.classList.add("thumbnailsArrowDeactivated");
     /*  If statement, żeby strzałka prev cofała z ostatniego do pierwszego
    if (smallSlides.length > 6 && smallSlides.length < 13) {
       slideIndex = 7;
@@ -213,7 +252,6 @@ function thumbnailsPrev(n) {
     } else if (smallSlides.length > 24 && smallSlides.length < 31) {
       slideIndex = 25;
     } */
-    //powyżej if statement zagnieżdżone w if statement
   } else if (slideIndex > 6 && slideIndex < 13) {
     slideIndex = 1;
   } else if (slideIndex > 12 && slideIndex < 19) {
@@ -233,7 +271,7 @@ function thumbnailsPrev(n) {
 function moveThumbnails(n) {
   let i;
 
-  //If n is bigger then the number of slides in an array stop at current
+  //If n is bigger then the number of slides in an array
   if (n > bigSlides.length) {
     slideIndex = n - 6;
   }
@@ -241,6 +279,18 @@ function moveThumbnails(n) {
   //If n is smaller than one stop at current
   if (n < 1) {
     slideIndex = 1;
+  }
+
+  if (slideIndex > 0 && slideIndex < 5) {
+    arrowLeft.classList.add("thumbnailsArrowDeactivated");
+    arrowLeftWrapper.onclick = "";
+  }
+
+  if (slideIndex > 4) {
+    arrowLeft.classList.remove("thumbnailsArrowDeactivated");
+    arrowLeftWrapper.onclick = function() {
+      thumbnailsPrev(slideIndex);
+    };
   }
 
   //apply "display none" to all slides (big and small)
@@ -292,5 +342,24 @@ function moveThumbnails(n) {
     slideIndex + 5 == smallSlides.length
   ) {
     smallSlides[slideIndex + 4].style.display = "inline";
+  }
+
+  let hiddenImage = false;
+  for (h = slideIndex; h < smallSlides.length; h++) {
+    if (smallSlides[h].style.display == "none") {
+      hiddenImage = true;
+    }
+  }
+
+  if (hiddenImage === false) {
+    //console.log("hide");
+    arrowRight.classList.add("thumbnailsArrowDeactivated");
+    arrowRightWrapper.onclick = "";
+  } else {
+    //console.log("show");
+    arrowRight.classList.remove("thumbnailsArrowDeactivated");
+    arrowRightWrapper.onclick = function() {
+      thumbnailsNext(slideIndex);
+    };
   }
 }
