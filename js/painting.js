@@ -37,6 +37,7 @@ function showSingleItemFiltered(p) {
 
     if (p._embedded) {
         copy.querySelector("img").src = p._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        copy.querySelector("img").alt = p._embedded["wp:featuredmedia"][0].alt_text;
     } else {
         copy.querySelector(".painting img").remove()
     }

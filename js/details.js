@@ -40,7 +40,8 @@ function showDetailsPhoto(Data) {
                 //console.log(photo.id)
         if (photo._embedded) {
             copyPhoto.querySelector("img").src = photo._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-        }
+            copyPhoto.querySelector("img").alt = photo._embedded["wp:featuredmedia"][0].alt_text;
+            }
         else {
             copyPhoto.querySelector("img").remove()
         }
@@ -52,6 +53,7 @@ function showDetailsPhoto(Data) {
         const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
          if (photo2._embedded) {
             copyPhoto2.querySelector("img").src = photo2._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+            copyPhoto2.querySelector("img").alt = photo2._embedded["wp:featuredmedia"][0].alt_text;
         } else {
             copyPhoto2.querySelector("img").remove();
         }
