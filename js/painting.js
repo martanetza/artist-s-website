@@ -91,20 +91,3 @@ function showDetails(painting) {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
