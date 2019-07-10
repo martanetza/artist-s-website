@@ -39,7 +39,7 @@ function showDetailsPhoto(Data) {
   /*Text of the paragraph*/
     function showDetailsPhotoOne(photo) {
 
-        console.log(photo.content)
+        console.log(photo.content.rendered)
         if(photo.content.rendered){
            document.querySelector("#photoText").innerHTML = photo.content.rendered
         }

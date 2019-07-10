@@ -395,6 +395,17 @@ img {
   font-size: 18px;
 }
 
+#photoText a{
+    text-decoration: none;
+    color: #872936;
+    }
+
+#photoText a:hover{
+    text-decoration: none;
+    font-weight: 400;
+    color: #872936;
+}
+
 #next6,
 #prev6 {
   display: none;
@@ -913,13 +924,6 @@ video {
     }
   }
 
-  .signature svg {
-    width: 20vw;
-    margin-right: 0px;
-    margin-top: 10px;
-    /*            display:none*/
-  }
-
   #h2homepage {
     display: block;
     margin-top: 40%;
@@ -958,6 +962,13 @@ video {
     grid-area: area3;
   }
   .signature img {
+    width: 20vw;
+    margin-right: 0px;
+    margin-top: 10px;
+    /*            display:none*/
+  }
+
+ .signature svg {
     width: 20vw;
     margin-right: 0px;
     margin-top: 10px;

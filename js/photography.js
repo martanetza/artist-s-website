@@ -30,6 +30,18 @@ function showDataByCategoryPhoto(List) {
   function showSinglePhotoItemFiltered(p) {
         const copy = templatePhoto.cloneNode(true).content;
         copy.querySelector(".title").textContent = p.title.rendered;
+        if(p.title.rendered == "Rozyczka"){
+           copy.querySelector(".title").textContent = "różyczka";
+        }
+      if(p.title.rendered == "Milion"){
+           copy.querySelector(".title").textContent = "milion $";
+        }
+      if(p.title.rendered == "Prymas"){
+           copy.querySelector(".title").textContent = "prymas w komańczy";
+        }
+      if(p.title.rendered == "Wiem"){
+           copy.querySelector(".title").textContent = "wiem, że nie śpisz";
+        }
         copy.querySelector("a").href = "photo_detail.html?phototid=" + p.title.rendered;
 
         if (p._embedded) {
