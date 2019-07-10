@@ -81,6 +81,7 @@ function showDetails(painting) {
     const boxUp= document.querySelector(".boxUp");
     boxUp.style.display="block";
     boxUp.querySelector("img").src = painting.acf.image_large.url;
+    boxUp.querySelector("img").alt = painting.acf.image_large.alt;
     boxUp.querySelector(".back a").href = "painting.html?filterid=" + painting.paintings[0];
     boxUp.querySelector("a").addEventListener("click", e=>{
         e.preventDefault()
