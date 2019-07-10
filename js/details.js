@@ -37,22 +37,12 @@ function showDetailsPhoto(Data) {
   }
 
   /*Text of the paragraph*/
-  function showDetailsPhotoOne(photo) {
-    if (photo.content.rendered) {
-      document.querySelector("#photoText").innerHTML = photo.content.rendered;
-    }
-
-    const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
-
-<<<<<<< HEAD
-    /*Text of the paragraph*/
     function showDetailsPhotoOne(photo) {
 
         console.log(photo.content)
         if(photo.content.rendered){
            document.querySelector("#photoText").innerHTML = photo.content.rendered
         }
-
 
         const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
                 //console.log(photo.id)
@@ -78,36 +68,7 @@ function showDetailsPhoto(Data) {
 
         document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
     showSlide2 = true
-
 }
-=======
-    if (photo._embedded) {
-      copyPhoto.querySelector("img").src =
-        photo._embedded[
-          "wp:featuredmedia"
-        ][0].media_details.sizes.full.source_url;
-    } else {
-      copyPhoto.querySelector("img").remove();
-    }
-    document.querySelector("#photoWindow").appendChild(copyPhoto);
-    showSlide1 = true;
-  }
-
-  function showDetailsPhotoSmall(photo2) {
-    const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
-    if (photo2._embedded) {
-      copyPhoto2.querySelector("img").src =
-        photo2._embedded[
-          "wp:featuredmedia"
-        ][0].media_details.sizes.full.source_url;
-    } else {
-      copyPhoto2.querySelector("img").remove();
-    }
-
-    document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
-    showSlide2 = true;
-  }
->>>>>>> origin/master
 
   if (showSlide1 && showSlide2) {
     showSlides(slideIndex);
