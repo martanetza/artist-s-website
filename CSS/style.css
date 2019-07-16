@@ -154,13 +154,13 @@ footer {
 }
 
 .signature img {
-  margin: 60px 20px 20px auto;
+  margin: 1.5em 20px 20px auto;
   width: 65vw;
   display: block;
 }
 
 .signature svg {
-  margin: 60px 20px 20px auto;
+  margin: 1.5em 20px 20px auto;
   width: 65vw;
   display: block;
 }
@@ -241,7 +241,7 @@ img {
 .paintings {
   grid-area: area1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
   grid-gap: 16px;
 }
 
@@ -338,7 +338,7 @@ img {
 .photos {
   grid-area: area1;
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, minmax(50px, 1fr));
   grid-gap: 16px;
 }
 
