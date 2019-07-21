@@ -290,16 +290,17 @@ img {
   color: #616161;
   left: 0vh;
   bottom: 0vh;
-  background-color: rgb(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   width: 100vw;
   height: 100vh;
   z-index: 5;
   display: none;
   position: fixed;
   overflow-y: scroll;
+  box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
   -webkit-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
   -moz-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
-  box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
+
 }
 
 .boxUp img {
@@ -846,11 +847,16 @@ video {
 
   .menu1:hover .sub_menu_1 {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
     display: block;
     left: 1%;
   }
   .menu2:hover .sub_menu_2 {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     display: block;
     left: 1%;
   }
@@ -1028,6 +1034,8 @@ video {
   .painting img:hover {
     width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   }
 
   .painting h3 {
@@ -1051,15 +1059,15 @@ video {
     color: #616161;
     left: 0vh;
     bottom: 0vh;
-    background-color: rgb(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     width: 100vw;
     height: 100vh;
     z-index: 5;
     display: none;
     position: fixed;
+    box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
     -webkit-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
     -moz-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
-    box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
   }
   .boxUp img {
     width: auto;
