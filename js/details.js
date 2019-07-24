@@ -17,6 +17,11 @@ var slideIndex = 1;
 const params2 = new URLSearchParams(window.location.search);
 const filterPhotoID = params2.get("phototid");
 
+window.addEventListener("load", event => {
+  console.log("page is fully loaded so slideshow can start");
+  slidesRunner();
+});
+
 fetch(baseLink2 + filterPhotoID + "?per_page=100&_embed")
   .then(promise => promise.json())
   .then(data => showDetailsPhoto(data));
@@ -38,7 +43,7 @@ function showDetailsPhoto(Data) {
 
   /*Text of the paragraph*/
   function showDetailsPhotoOne(photo) {
-    console.log(photo.content.rendered);
+    //console.log(photo.content.rendered);
     if (photo.content.rendered) {
       document.querySelector("#photoText").innerHTML = photo.content.rendered;
     }
@@ -80,10 +85,6 @@ function showDetailsPhoto(Data) {
     showSlides(slideIndex);
     var timeoutObj;
     //slidesRunner();
-    window.addEventListener("load", event => {
-      console.log("page is fully loaded so slideshow can start");
-      slidesRunner();
-    });
   }
 }
 
@@ -121,11 +122,13 @@ function showSlides(n) {
   }
 
   /*Displaying the big image*/
-  bigSlides[slideIndex - 1].style.display = "block";
 
-  //underlining the current image
-  smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");
+  if (bigSlides[slideIndex - 1] != null) {
+    bigSlides[slideIndex - 1].style.display = "block";
 
+    //underlining the current image
+    smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");
+  }
   //if other than the first slide is displayed, display the preceding slide
   if (slideIndex != 1) {
     smallSlides[slideIndex - 2].style.display = "inline";
@@ -139,11 +142,15 @@ function showSlides(n) {
     smallSlides[slideIndex - 4].style.display = "inline";
   }
   //display the current slide
-  smallSlides[slideIndex - 1].style.display = "inline";
+  if (bigSlides[slideIndex - 1] != null) {
+    smallSlides[slideIndex - 1].style.display = "inline";
+  }
 
   //if other than last slide is displayed, display the last one
   if (slideIndex != bigSlides.length) {
-    smallSlides[slideIndex].style.display = "inline";
+    if (smallSlides[slideIndex] != null) {
+      smallSlides[slideIndex].style.display = "inline";
+    }
   }
 
   //if other than one before last slide is displayed, display the second following
