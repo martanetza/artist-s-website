@@ -17,6 +17,10 @@ var slideIndex = 1;
 const params2 = new URLSearchParams(window.location.search);
 const filterPhotoID = params2.get("phototid");
 
+function refresh() {
+  location.reload();
+}
+
 window.addEventListener("load", event => {
   console.log("page is fully loaded so slideshow can start");
   slidesRunner();
