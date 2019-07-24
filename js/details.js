@@ -79,7 +79,11 @@ function showDetailsPhoto(Data) {
   if (showSlide1 && showSlide2) {
     showSlides(slideIndex);
     var timeoutObj;
-    slidesRunner();
+    //slidesRunner();
+    window.addEventListener("load", event => {
+      console.log("page is fully loaded so slideshow can start");
+      slidesRunner();
+    });
   }
 }
 
@@ -192,7 +196,7 @@ function showSlides(n) {
 
 function slidesRunner() {
   var smallSlides = document.getElementsByClassName("smallSlides");
-  if (window.innerWidth > 991) {
+  if (window.innerWidth > 768) {
     timeoutObj = setTimeout(slidesRunner, 3000);
 
     showSlides(slideIndex);
@@ -221,7 +225,6 @@ function showBigSlide(n) {
   showSlides(slideIndex);
 }
 
-/*wybór slajdu który będzie bieżący*/
 function thumbnailsNext(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
@@ -242,7 +245,6 @@ function thumbnailsNext(n) {
   n = slideIndex + 6;
 }
 
-/*wybór slajdu który będzie bieżący*/
 function thumbnailsPrev(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
