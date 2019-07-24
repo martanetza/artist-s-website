@@ -37,38 +37,44 @@ function showDetailsPhoto(Data) {
   }
 
   /*Text of the paragraph*/
-    function showDetailsPhotoOne(photo) {
-
-        console.log(photo.content.rendered)
-        if(photo.content.rendered){
-           document.querySelector("#photoText").innerHTML = photo.content.rendered
-        }
-
-        const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
-                //console.log(photo.id)
-        if (photo._embedded) {
-            copyPhoto.querySelector("img").src = photo._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-            copyPhoto.querySelector("img").alt = photo._embedded["wp:featuredmedia"][0].alt_text;
-            }
-        else {
-            copyPhoto.querySelector("img").remove()
-        }
-        document.querySelector("#photoWindow").appendChild(copyPhoto);
-        showSlide1 = true
+  function showDetailsPhotoOne(photo) {
+    console.log(photo.content.rendered);
+    if (photo.content.rendered) {
+      document.querySelector("#photoText").innerHTML = photo.content.rendered;
     }
 
-    function showDetailsPhotoSmall(photo2) {
-        const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
-         if (photo2._embedded) {
-            copyPhoto2.querySelector("img").src = photo2._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-            copyPhoto2.querySelector("img").alt = photo2._embedded["wp:featuredmedia"][0].alt_text;
-        } else {
-            copyPhoto2.querySelector("img").remove();
-        }
+    const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
+    //console.log(photo.id)
+    if (photo._embedded) {
+      copyPhoto.querySelector("img").src =
+        photo._embedded[
+          "wp:featuredmedia"
+        ][0].media_details.sizes.full.source_url;
+      copyPhoto.querySelector("img").alt =
+        photo._embedded["wp:featuredmedia"][0].alt_text;
+    } else {
+      copyPhoto.querySelector("img").remove();
+    }
+    document.querySelector("#photoWindow").appendChild(copyPhoto);
+    showSlide1 = true;
+  }
 
-        document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
-    showSlide2 = true
-}
+  function showDetailsPhotoSmall(photo2) {
+    const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
+    if (photo2._embedded) {
+      copyPhoto2.querySelector("img").src =
+        photo2._embedded[
+          "wp:featuredmedia"
+        ][0].media_details.sizes.full.source_url;
+      copyPhoto2.querySelector("img").alt =
+        photo2._embedded["wp:featuredmedia"][0].alt_text;
+    } else {
+      copyPhoto2.querySelector("img").remove();
+    }
+
+    document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
+    showSlide2 = true;
+  }
 
   if (showSlide1 && showSlide2) {
     showSlides(slideIndex);
@@ -111,7 +117,7 @@ function showSlides(n) {
   }
 
   /*Displaying the big image*/
-  bigSlides[slideIndex - 1].style.display = "inline";
+  bigSlides[slideIndex - 1].style.display = "block";
 
   //underlining the current image
   smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");
@@ -300,7 +306,7 @@ function moveThumbnails(n) {
   }
 
   /*Displaying the big image*/
-  bigSlides[slideIndex - 1].style.display = "inline";
+  bigSlides[slideIndex - 1].style.display = "block";
 
   //underlining the current image
   smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");
