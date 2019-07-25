@@ -727,7 +727,7 @@ iframe {
     padding-right: 90px;
     padding-top: 0.83em;
     width: 80vw;
-    max-height: calc(
+    /*max-height: calc(
       100vh - 102px - 40px - 40px
     ); /*100vh - wysokość headera i marginesów*/
     margin: 40px auto;
@@ -832,7 +832,7 @@ iframe {
   }
 }
 
-/*--------------------------------------desktop - 991------------------------------------------------------*/
+/*--------------------------------------desktop 1------------------------------------------------------*/
 
 @media all and (min-width: 991px) {
   main {
@@ -1707,7 +1707,7 @@ iframe {
   }
 }
 
-/*--------------------------------------desktop ------------------------------------------------------*/
+/*--------------------------------------desktop 2 ------------------------------------------------------*/
 @media all and (min-width: 1025px) {
   /*------------photo detail page content-----------*/
 
@@ -1734,9 +1734,10 @@ iframe {
     margin-top: 70px;
     overflow-y: auto;
     width: calc(80vw - 52vw); /*minus image width*/
-    height: 35vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
+    height: 33vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
     min-width: 15vw;
     margin-top: 0px;
+    padding-top: 0;
   }
 
   #photoWindow {
@@ -1788,6 +1789,7 @@ iframe {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 4.7vh;
   }
 
   .smallImagesBox {
@@ -1833,7 +1835,7 @@ iframe {
   }
 }
 
-/*--------------------------------------desktop ------------------------------------------------------*/
+/*--------------------------------------desktop 3 ------------------------------------------------------*/
 
 @media all and (min-width: 1250px) {
   /*------------photo detail page content-----------*/
