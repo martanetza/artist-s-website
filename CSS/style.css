@@ -747,8 +747,8 @@ iframe {
   #photoWindow {
     grid-area: window;
     width: 80vw;
-    height: 55vw;
-    overflow-y: hidden;
+    height: 60vw;
+    /*overflow-y: hidden;*/
   }
 
   #smallImagesContainer {
@@ -1734,7 +1734,7 @@ iframe {
     margin-top: 70px;
     overflow-y: auto;
     width: calc(80vw - 52vw); /*minus image width*/
-    height: 33vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
+    height: 32vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
     min-width: 15vw;
     margin-top: 0px;
     padding-top: 0;
@@ -1745,16 +1745,15 @@ iframe {
     /*z-index: 3;
     height: 400px;*/
     width: auto;
-    height: 35vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
-    overflow-y: hidden;
-    /*padding-bottom: 70px;*/
+    height: 38vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
     margin-left: 1.5vw;
+    /*overflow-y: hidden;*/
   }
 
   /*Big slide*/
   .mySlides img {
     display: inline-block;
-    width: 52vw;
+    width: 47vw;
     height: auto;
     float: right;
     /*margin-top: calc(0.83em + 27px);*/
@@ -1840,16 +1839,6 @@ iframe {
 @media all and (min-width: 1250px) {
   /*------------photo detail page content-----------*/
 
-  /*Big slide*/
-  .mySlides img {
-    display: inline-block;
-    width: 38vw;
-    height: auto;
-    float: right;
-    /*margin-top: calc(0.83em + 27px);*/
-    margin-right: 0px;
-  }
-
   #smallImagesBoxContainer {
     display: flex;
     justify-content: flex-start;
@@ -1874,7 +1863,7 @@ iframe {
     margin-top: 70px;
     overflow-y: auto;
     width: calc(80vw - 45vw); /*minus image width*/
-    height: 54vh; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
+    height: 48vh; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
     min-width: 15vw;
     margin-top: 0px;
   }
@@ -1882,16 +1871,15 @@ iframe {
   #photoWindow {
     grid-area: window;
     width: auto;
-    height: 54vh;
-    overflow-y: hidden;
-    /*padding-bottom: 70px;*/
+    height: 56vh;
+    /*overflow-y: visible;*/
     margin-left: 1.5vw;
   }
 
   /*Big slide*/
   .mySlides img {
     display: inline-block;
-    width: 45vw;
+    width: 40vw;
     height: auto;
     float: right;
     /*margin-top: calc(0.83em + 27px);*/
