@@ -17,6 +17,15 @@ var slideIndex = 1;
 const params2 = new URLSearchParams(window.location.search);
 const filterPhotoID = params2.get("phototid");
 
+function refresh() {
+  location.reload();
+}
+
+window.addEventListener("load", event => {
+  console.log("page is fully loaded so slideshow can start");
+  slidesRunner();
+});
+
 fetch(baseLink2 + filterPhotoID + "?per_page=100&_embed")
   .then(promise => promise.json())
   .then(data => showDetailsPhoto(data));
@@ -37,43 +46,49 @@ function showDetailsPhoto(Data) {
   }
 
   /*Text of the paragraph*/
-    function showDetailsPhotoOne(photo) {
-
-        console.log(photo.content.rendered)
-        if(photo.content.rendered){
-           document.querySelector("#photoText").innerHTML = photo.content.rendered
-        }
-
-        const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
-                //console.log(photo.id)
-        if (photo._embedded) {
-            copyPhoto.querySelector("img").src = photo._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-            copyPhoto.querySelector("img").alt = photo._embedded["wp:featuredmedia"][0].alt_text;
-            }
-        else {
-            copyPhoto.querySelector("img").remove()
-        }
-        document.querySelector("#photoWindow").appendChild(copyPhoto);
-        showSlide1 = true
+  function showDetailsPhotoOne(photo) {
+    //console.log(photo.content.rendered);
+    if (photo.content.rendered) {
+      document.querySelector("#photoText").innerHTML = photo.content.rendered;
     }
 
-    function showDetailsPhotoSmall(photo2) {
-        const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
-         if (photo2._embedded) {
-            copyPhoto2.querySelector("img").src = photo2._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-            copyPhoto2.querySelector("img").alt = photo2._embedded["wp:featuredmedia"][0].alt_text;
-        } else {
-            copyPhoto2.querySelector("img").remove();
-        }
+    const copyPhoto = TemplPhotoDetails.cloneNode(true).content;
+    //console.log(photo.id)
+    if (photo._embedded) {
+      copyPhoto.querySelector("img").src =
+        photo._embedded[
+          "wp:featuredmedia"
+        ][0].media_details.sizes.full.source_url;
+      copyPhoto.querySelector("img").alt =
+        photo._embedded["wp:featuredmedia"][0].alt_text;
+    } else {
+      copyPhoto.querySelector("img").remove();
+    }
+    document.querySelector("#photoWindow").appendChild(copyPhoto);
+    showSlide1 = true;
+  }
 
-        document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
-    showSlide2 = true
-}
+  function showDetailsPhotoSmall(photo2) {
+    const copyPhoto2 = TemplPhotoDetails2.cloneNode(true).content;
+    if (photo2._embedded) {
+      copyPhoto2.querySelector("img").src =
+        photo2._embedded[
+          "wp:featuredmedia"
+        ][0].media_details.sizes.full.source_url;
+      copyPhoto2.querySelector("img").alt =
+        photo2._embedded["wp:featuredmedia"][0].alt_text;
+    } else {
+      copyPhoto2.querySelector("img").remove();
+    }
+
+    document.querySelector(".smallImagesBox").appendChild(copyPhoto2);
+    showSlide2 = true;
+  }
 
   if (showSlide1 && showSlide2) {
     showSlides(slideIndex);
     var timeoutObj;
-    slidesRunner();
+    //slidesRunner();
   }
 }
 
@@ -111,11 +126,13 @@ function showSlides(n) {
   }
 
   /*Displaying the big image*/
-  bigSlides[slideIndex - 1].style.display = "inline";
 
-  //underlining the current image
-  smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");
+  if (bigSlides[slideIndex - 1] != null) {
+    bigSlides[slideIndex - 1].style.display = "block";
 
+    //underlining the current image
+    smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");
+  }
   //if other than the first slide is displayed, display the preceding slide
   if (slideIndex != 1) {
     smallSlides[slideIndex - 2].style.display = "inline";
@@ -129,11 +146,15 @@ function showSlides(n) {
     smallSlides[slideIndex - 4].style.display = "inline";
   }
   //display the current slide
-  smallSlides[slideIndex - 1].style.display = "inline";
+  if (bigSlides[slideIndex - 1] != null) {
+    smallSlides[slideIndex - 1].style.display = "inline";
+  }
 
   //if other than last slide is displayed, display the last one
   if (slideIndex != bigSlides.length) {
-    smallSlides[slideIndex].style.display = "inline";
+    if (smallSlides[slideIndex] != null) {
+      smallSlides[slideIndex].style.display = "inline";
+    }
   }
 
   //if other than one before last slide is displayed, display the second following
@@ -186,7 +207,7 @@ function showSlides(n) {
 
 function slidesRunner() {
   var smallSlides = document.getElementsByClassName("smallSlides");
-  if (window.innerWidth > 991) {
+  if (window.innerWidth > 768) {
     timeoutObj = setTimeout(slidesRunner, 3000);
 
     showSlides(slideIndex);
@@ -215,7 +236,6 @@ function showBigSlide(n) {
   showSlides(slideIndex);
 }
 
-/*wybór slajdu który będzie bieżący*/
 function thumbnailsNext(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
@@ -236,7 +256,6 @@ function thumbnailsNext(n) {
   n = slideIndex + 6;
 }
 
-/*wybór slajdu który będzie bieżący*/
 function thumbnailsPrev(n) {
   slideIndex = n;
   if (slideIndex > 0 && slideIndex < 7) {
@@ -300,7 +319,7 @@ function moveThumbnails(n) {
   }
 
   /*Displaying the big image*/
-  bigSlides[slideIndex - 1].style.display = "inline";
+  bigSlides[slideIndex - 1].style.display = "block";
 
   //underlining the current image
   smallSlides[slideIndex - 1].classList.add("smallSlideUnderlined");

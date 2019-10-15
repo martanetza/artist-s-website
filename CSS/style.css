@@ -300,7 +300,6 @@ img {
   box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
   -webkit-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
   -moz-box-shadow: -1px 3px 5px 0px rgba(43, 40, 43, 0.68);
-
 }
 
 .boxUp img {
@@ -386,25 +385,27 @@ img {
 
 #photoText {
   grid-area: text;
-  /*padding-right: 20px;*/
   margin-top: 15px;
-  height: flex;
   overflow: visible;
+}
+
+.smallImagesBox {
+  grid-area: smallImgs;
 }
 
 #photoText p:nth-of-type(1) {
   font-size: 18px;
 }
 
-#photoText a{
-    text-decoration: none;
-    color: #872936;
-    }
+#photoText a {
+  text-decoration: none;
+  color: #872936;
+}
 
-#photoText a:hover{
-    text-decoration: none;
-    font-weight: 400;
-    color: #872936;
+#photoText a:hover {
+  text-decoration: none;
+  font-weight: 400;
+  color: #872936;
 }
 
 #next6,
@@ -419,27 +420,11 @@ img {
   height: auto;
 }
 
-.smallSlideUnderlined {
-  margin: 10px;
-}
-
 .mySlides img {
-  width: 600px;
+  width: 80vw;
   margin-right: 10px;
   display: none;
 }
-
-.smallImagesBox {
-  grid-area: smallImgs;
-}
-
-/*.mySlides{
-    z-index: 2;*/
-
-/*.mySlides img{
-        width: 600px;
-        margin-right: 10px;
-    }*/
 
 /*----------content subpage about-----------*/
 
@@ -522,7 +507,7 @@ img {
   margin: 40px auto 40px auto;
 }
 
-.video{
+.video {
   position: relative;
   width: 100%;
   padding-bottom: 56.25%;
@@ -531,7 +516,7 @@ img {
 
 iframe {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -727,7 +712,127 @@ iframe {
   margin-bottom: 5px;
 }
 
-/*--------------------------------------desktop------------------------------------------------------*/
+/*--------------------------------------tablet------------------------------------------------------*/
+@media all and (min-width: 768px) {
+  /*------------photo detail page content-----------*/
+  #photoGrid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "text"
+      "window"
+      "smallImgs";
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 0.83em;
+    width: 80vw;
+    /*max-height: calc(
+      100vh - 102px - 40px - 40px
+    ); /*100vh - wysokość headera i marginesów*/
+    margin: 40px auto;
+  }
+
+  #photoText {
+    grid-area: text;
+    padding-right: 0;
+    margin-top: 0;
+    height: auto;
+    overflow-y: auto;
+    width: 80vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+  }
+
+  #photoWindow {
+    grid-area: window;
+    width: 80vw;
+    height: 60vw;
+    /*overflow-y: hidden;*/
+  }
+
+  #smallImagesContainer {
+    grid-area: smallImgs;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .mySlides img {
+    display: block;
+    width: 73vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #smallImagesBoxContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: calc(
+      (10.8vw * 6) + (1.5vw * 6) + 1.5vw + 6px
+    ); /*The width consists of images width, images margins, smallImagesBox padding and width of current image border*/
+  }
+
+  .smallSlides {
+    /*display: inline;*/
+    margin-right: 1.5vw;
+    margin-left: 0px;
+    width: 10.8vw;
+    height: auto;
+    float: left;
+    /*clip-path: inset(20px 0 0 0);*/
+  }
+
+  .smallSlideUnderlined {
+    border: 3px solid #852a36;
+    clip-path: none;
+  }
+
+  .smallImagesBox {
+    padding-left: 1.5vw;
+    width: fit-content;
+  }
+
+  .sImgInline {
+    display: inline;
+  }
+
+  #photoText p:nth-of-type(1) {
+    font-size: 18px;
+    margin-bottom: 0.83em;
+  }
+
+  #photoParagraph {
+    padding-top: 0px;
+  }
+
+  #next6 {
+    display: block;
+    float: right;
+  }
+
+  #prev6 {
+    display: block;
+    float: left;
+  }
+
+  .thumbnailsArrows {
+    width: 2vw;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .thumbnailsArrowDeactivated {
+    width: 2vw;
+    height: auto;
+    cursor: default;
+    opacity: 0.28;
+  }
+}
+
+/*--------------------------------------desktop 1------------------------------------------------------*/
 
 @media all and (min-width: 991px) {
   main {
@@ -984,7 +1089,7 @@ iframe {
     /*            display:none*/
   }
 
- .signature svg {
+  .signature svg {
     width: 20vw;
     margin-right: 0px;
     margin-top: 10px;
@@ -1160,18 +1265,18 @@ iframe {
     float: right;
   }
 
-    .video{
-  position: relative;
-  width: 95%;
-  padding-bottom: 56.25%;
-  height: 0;
-  margin-top: 20px;
+  .video {
+    position: relative;
+    width: 95%;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-top: 20px;
     margin-bottom: 80px;
-    }
+  }
 
   iframe {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -1241,123 +1346,6 @@ iframe {
     border-bottom: 2px solid #872936;
     width: 30%;
     margin: 0px 0px 10px 0.25fr;
-  }
-
-  /*------------photo detail page content-----------*/
-
-  /*.mySlides {
-    z-index: 2;
-  }*/
-
-  /*Big slide*/
-  .mySlides img {
-    display: block;
-    width: 600px;
-    /*margin-right: 1.5vw;*/
-    float: right;
-    /*margin-top: calc(0.83em + 27px);*/
-    margin-right: 0px;
-  }
-
-  #smallImagesBoxContainer {
-    display: flex;
-    justify-content: flex-start;
-    width: calc(
-      (10.8vw * 6) + (1.5vw * 6) + 1.5vw + 6px
-    ); /*The width consists of images width, images margins, smallImagesBox padding and width of current image border*/
-  }
-
-  .smallSlides {
-    display: inline;
-    margin-right: 1.5vw;
-    margin-left: 0px;
-    width: 10.8vw;
-    height: auto;
-    float: left;
-  }
-
-  .smallSlideUnderlined {
-    border: 3px solid #852a36;
-  }
-
-  #smallImagesContainer {
-    grid-area: smallImgs;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .smallImagesBox {
-    padding-left: 1.5vw;
-    width: fit-content;
-  }
-
-  .sImgInline {
-    display: inline;
-  }
-
-  #photoGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 2;
-    grid-template-areas:
-      "text window"
-      "smallImgs smallImgs";
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 0.83em;
-    width: 80vw;
-    margin: 40px auto;
-  }
-
-  #photoText {
-    grid-area: text;
-    padding-right: 20px;
-    margin-top: 70px;
-    height: 400px;
-    overflow: auto;
-    min-width: 30vw;
-    margin-top: 0px;
-  }
-
-  #photoWindow {
-    grid-area: window;
-    z-index: 3;
-    height: 400px;
-    padding-bottom: 70px;
-    margin-left: 1.5vw;
-  }
-
-  #photoText p:nth-of-type(1) {
-    font-size: 18px;
-    margin-bottom: 0.83em;
-  }
-
-  #photoParagraph {
-    padding-top: 0px;
-  }
-
-  #next6 {
-    display: block;
-    float: right;
-  }
-
-  #prev6 {
-    display: block;
-    float: left;
-  }
-
-  .thumbnailsArrows {
-    width: 2vw;
-    height: auto;
-    cursor: pointer;
-  }
-
-  .thumbnailsArrowDeactivated {
-    width: 2vw;
-    height: auto;
-    cursor: default;
-    opacity: 0.28;
   }
 
   /*----------content subpage contact-----------*/
@@ -1716,5 +1704,185 @@ iframe {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/*--------------------------------------desktop 2 ------------------------------------------------------*/
+@media all and (min-width: 1025px) {
+  /*------------photo detail page content-----------*/
+
+  #photoGrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "text window"
+      "smallImgs smallImgs";
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 0.83em;
+    width: 80vw;
+    max-height: calc(
+      100vh - 102px - 40px - 40px
+    ); /*100vh - wysokość headera i marginesów*/
+    margin: 40px auto;
+  }
+
+  #photoText {
+    grid-area: text;
+    padding-right: 20px;
+    margin-top: 70px;
+    overflow-y: auto;
+    width: calc(80vw - 52vw); /*minus image width*/
+    height: 32vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
+    min-width: 15vw;
+    margin-top: 0px;
+    padding-top: 0;
+  }
+
+  #photoWindow {
+    grid-area: window;
+    /*z-index: 3;
+    height: 400px;*/
+    width: auto;
+    height: 38vw; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
+    margin-left: 1.5vw;
+    /*overflow-y: hidden;*/
+  }
+
+  /*Big slide*/
+  .mySlides img {
+    display: inline-block;
+    width: 47vw;
+    height: auto;
+    float: right;
+    /*margin-top: calc(0.83em + 27px);*/
+    margin-right: 0px;
+  }
+
+  #smallImagesBoxContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: calc(
+      (11.3vw * 6) + (1vw * 6) + 1.5vw + 6px
+    ); /*The width consists of images width, images margins, smallImagesBox padding and width of current image border*/
+  }
+
+  .smallSlides {
+    /*display: inline;*/
+    margin-right: 0.5vw;
+    margin-left: 0px;
+    width: 11.8vw;
+    height: auto;
+    float: left;
+    /*clip-path: inset(20px 0 0 0);*/
+  }
+
+  .smallSlideUnderlined {
+    border: 3px solid #852a36;
+    clip-path: none;
+  }
+
+  #smallImagesContainer {
+    grid-area: smallImgs;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.7vh;
+  }
+
+  .smallImagesBox {
+    padding-left: 1.5vw;
+    width: fit-content;
+  }
+
+  .sImgInline {
+    display: inline;
+    /*clip: rect(30px, 30px, 20px, 20px);*/
+  }
+
+  #photoText p:nth-of-type(1) {
+    font-size: 18px;
+    margin-bottom: 0.83em;
+  }
+
+  #photoParagraph {
+    padding-top: 0px;
+  }
+
+  #next6 {
+    display: block;
+    float: right;
+  }
+
+  #prev6 {
+    display: block;
+    float: left;
+  }
+
+  .thumbnailsArrows {
+    width: 2vw;
+    height: auto;
+    cursor: pointer;
+  }
+
+  .thumbnailsArrowDeactivated {
+    width: 2vw;
+    height: auto;
+    cursor: default;
+    opacity: 0.28;
+  }
+}
+
+/*--------------------------------------desktop 3 ------------------------------------------------------*/
+
+@media all and (min-width: 1250px) {
+  /*------------photo detail page content-----------*/
+
+  #smallImagesBoxContainer {
+    display: flex;
+    justify-content: flex-start;
+    width: calc(
+      (10.8vw * 6) + (1.5vw * 6) + 1.5vw + 6px
+    ); /*The width consists of images width, images margins, smallImagesBox padding and width of current image border*/
+  }
+
+  .smallSlides {
+    /*display: inline;*/
+    margin-right: 1.3vw;
+    margin-left: 0px;
+    width: 10.8vw;
+    height: auto;
+    float: left;
+    /*clip-path: inset(20px 0 0 0);*/
+  }
+
+  #photoText {
+    grid-area: text;
+    padding-right: 20px;
+    margin-top: 70px;
+    overflow-y: auto;
+    width: calc(80vw - 45vw); /*minus image width*/
+    height: 48vh; /*Proportionally to proportions of the image. (Image has width defined in vw and height auto*/
+    min-width: 15vw;
+    margin-top: 0px;
+  }
+
+  #photoWindow {
+    grid-area: window;
+    width: auto;
+    height: 56vh;
+    /*overflow-y: visible;*/
+    margin-left: 1.5vw;
+  }
+
+  /*Big slide*/
+  .mySlides img {
+    display: inline-block;
+    width: 40vw;
+    height: auto;
+    float: right;
+    /*margin-top: calc(0.83em + 27px);*/
+    margin-right: 0px;
   }
 }
