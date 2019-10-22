@@ -207,7 +207,7 @@ function showSlides(n) {
 
 function slidesRunner() {
   var smallSlides = document.getElementsByClassName("smallSlides");
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 767) {
     timeoutObj = setTimeout(slidesRunner, 3000);
 
     showSlides(slideIndex);

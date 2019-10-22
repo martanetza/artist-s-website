@@ -714,6 +714,15 @@ iframe {
 
 /*--------------------------------------tablet------------------------------------------------------*/
 @media all and (min-width: 768px) {
+
+.signature svg{
+    margin: 3em 20px 20px auto
+    }
+
+.videoAbout p:nth-child(even) {
+    margin: 1em 0 0 0;
+    text-align: center;
+    }
   /*------------photo detail page content-----------*/
   #photoGrid {
     display: grid;
@@ -747,7 +756,7 @@ iframe {
   #photoWindow {
     grid-area: window;
     width: 80vw;
-    height: 60vw;
+    height: 55vw;
     /*overflow-y: hidden;*/
   }
 
@@ -834,7 +843,7 @@ iframe {
 
 /*--------------------------------------desktop 1------------------------------------------------------*/
 
-@media all and (min-width: 991px) {
+@media all and (min-width: 1025px) {
   main {
     padding-bottom: 0px;
   }
