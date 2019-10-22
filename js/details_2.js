@@ -17,9 +17,6 @@ var slideIndex = 1;
 const params2 = new URLSearchParams(window.location.search);
 const filterPhotoID = params2.get("phototid");
 
-function refresh() {
-  location.reload();
-}
 
 fetch(baseLink2 + filterPhotoID + "?per_page=100&_embed")
   .then(promise => promise.json())
