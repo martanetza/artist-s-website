@@ -415,8 +415,8 @@ img {
 
 .smallSlides {
   display: block;
-  margin: 10px;
-  width: 95%;
+  margin: 10px 0px;
+  width: 100%;
   height: auto;
 }
 
@@ -756,7 +756,7 @@ iframe {
   #photoWindow {
     grid-area: window;
     width: 80vw;
-    height: 55vw;
+    height: 60vw;
     /*overflow-y: hidden;*/
   }
 
@@ -770,7 +770,7 @@ iframe {
 
   .mySlides img {
     display: block;
-    width: 73vw;
+    width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -1311,6 +1311,7 @@ iframe {
   .videoAbout p:nth-child(even) {
     margin-top: 1.8em;
     margin-left: 1em;
+    text-align: left;
   }
 
   .videoAbout p:nth-child(odd) {
