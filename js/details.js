@@ -1,5 +1,5 @@
 let baseLink2 =
-  "http://martanetza.com/kea/cms/Dyczkowski/wordpress/wp-json/wp/v2/";
+  "https://zgrzyt.org/db/wp-json/wp/v2/";
 let TemplPhotoDetails = document.querySelector(".photoDetailsTemplate");
 let TemplPhotoDetails2 = document.querySelector(".photoDetailsTemplate2");
 let bigSlides = document.getElementsByClassName("mySlides"); //array
