@@ -1,9 +1,9 @@
 let baseLink =
-  "http://martanetza.com/kea/cms/Dyczkowski/wordpress/wp-json/wp/v2/";
+  "https://zgrzyt.org/db/wp-json/wp/v2/";
 let PaintingCatLink =
-  "http://martanetza.com/kea/cms/Dyczkowski/wordpress/wp-json/wp/v2/paintings";
+  "https://zgrzyt.org/db/wp-json/wp/v2/paintings";
 let PhotoCatLink =
-  "http://martanetza.com/kea/cms/Dyczkowski/wordpress/wp-json/wp/v2/photo";
+  "https://zgrzyt.org/db/wp-json/wp/v2/photo";
 let menu = document.querySelector(".navigation ul");
 let menu1 = document.querySelector(".sub_menu_1");
 let menu2 = document.querySelector(".sub_menu_2");
